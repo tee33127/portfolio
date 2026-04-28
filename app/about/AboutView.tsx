@@ -24,9 +24,9 @@ export default function AboutView() {
         </div>
       </div>
 
-      <p>{t.intro1[lang]}</p>
-      <p>{t.intro2[lang]}</p>
-      <p>{t.intro3[lang]}</p>
+      <p>Hello, my name is Tee, and I am a UX designer, someone who likes making complex things into simple things. I am interested in why things are made the way they are in our daily lives. This interest in understanding people has been my reason to dive into user research, accessibility, and intuitive designs of products.</p>
+      <p>For me, being able to discover things, ask questions, find answers, and build solutions from scratch is as fun as getting positive feedback from users. I like working in areas where my tasks help make something useful and enjoyable for other people and accessible.</p>
+      <p>When I am not designing, I love photography, exploring, and finding the beauty in little things around us. These interests also inspire me in design work, especially when I think about human-centered experiences.</p>
 
       <hr />
 
