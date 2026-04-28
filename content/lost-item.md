@@ -1,0 +1,46 @@
+A user research study on how people search for lost items at home — and what a technology solution would need to address that goes beyond location tracking.
+
+## Overview
+
+**Type** · Academic Research Study — HCI 445, DePaul University
+**Timeline** · Spring 2024
+**Role** · Researcher — observation, interviews, analysis
+**Team** · 4 members
+
+![Affinity diagram — observation sessions organized by participant and theme](/images/lost-item/affinity-diagram-observation.png)
+
+## The Problem
+
+Losing things is universal. But the experience isn't just inconvenient — it's emotional. People panic, search frantically, feel genuine stress even when the item is probably just under the couch. The question: what does that experience actually look like, and what would a technology solution need to do — not just functionally, but emotionally — to help?
+
+## Research
+
+We ran two sequential studies.
+
+**Observation (n=8)** — We went into participants' homes and asked them to act out searching for a commonly lost item right before leaving for the day. We watched where they looked first, how they moved through the space, and how they reacted emotionally.
+
+**Interviews (n=8)** — Semi-structured, building on what we observed. We asked about real lost-item experiences, technology they'd used, and what would actually make them adopt a tracking solution.
+
+## What We Found
+
+**How people search** — Nearly everyone followed the same pattern: check the usual spot, retrace steps, then expand outward. It's a spatial, instinctive process — people use their mental map of a room to narrow down possibilities.
+
+**The emotional dimension** — Even in a simulation, participants got visibly stressed. One whined to their partner. Another searched frantically. A third bit her finger anxiously while waiting for her mom to pick up the phone. Real physical reactions — to an item they knew wasn't actually lost.
+
+**What people want from technology** — Precise tracking above everything. Small and lightweight. Private — one participant raised a specific concern: multiple trackers in a bag could signal it as a high-value target for theft. And affordable, because most people don't feel losing things has a significant financial cost.
+
+![Final affinity diagram — synthesized insights and design implications](/images/lost-item/final-affinity-diagram.png)
+
+## Design Implications
+
+Most tracking apps treat this as a location problem. Our research says it's equally an emotional problem. The best solution isn't just accurate — it's reassuring. The interface needs to be simple, calm, and spatially intuitive. You're designing for someone in a mild panic, not someone at a desk.
+
+Key requirements: slim physical profile, emotionally supportive UX, location data that feels private and safe, freemium pricing.
+
+## The Honest Limitation
+
+We couldn't simulate genuine stress. Participants knew it was an activity. We saw glimpses of real emotion even in the simulation, which suggests the instinct kicks in even when the stakes aren't real. But it wasn't the same as watching someone actually search for something they needed. If I could redo this, I'd hide something before the session without the participant knowing.
+
+## What I Learned
+
+Designing for emotional states is different from designing for tasks. The best solution isn't just accurate — it's reassuring. That reframe changes almost every design decision downstream.
