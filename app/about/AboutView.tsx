@@ -84,7 +84,7 @@ export default function AboutView() {
 
       <div className="not-prose mt-8">
         <a
-          href="/Teetawat_Resume_2026.pdf"
+          href="/Updated_Resume_Teetawat.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm font-medium border border-zinc-200 dark:border-zinc-700 rounded-lg px-5 py-2.5 hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
