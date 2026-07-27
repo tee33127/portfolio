@@ -20,7 +20,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle_th: "แอปจัดการงานในครอบครัว",
     type: "Capstone · Mobile Design",
     year: "2025",
-    role: "Lead Designer, Researcher",
+    role: "UX Researcher & Design Contributor",
     team: "3 members",
     description:
       "Designed a chore management app that builds responsibility in children without relying on financial incentives.",
@@ -34,7 +34,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle_th: "การวิจัยการใช้งาน Screen Reader",
     type: "Research Study · HCI",
     year: "2024",
-    role: "Session Facilitator, Presenter",
+    role: "UX Researcher & Session Facilitator",
     team: "3 members",
     description:
       "Led usability sessions with blind users to identify where Amazon's e-commerce experience breaks down for screen reader users.",
@@ -48,7 +48,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle_th: "ออกแบบโครงสร้างข้อมูลใหม่",
     type: "IA Design · Navigation",
     year: "2024",
-    role: "Lead Designer",
+    role: "UX/IA Designer",
     team: "2 members",
     description:
       "Redesigned Etsy's mobile navigation structure using card sorting and treejack testing, improving task success from 67% to 94%.",
@@ -62,7 +62,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle_th: "การวิจัยผู้ใช้สำหรับบริการค้นหาสิ่งของ",
     type: "Research Study · Service Design",
     year: "2024",
-    role: "Researcher",
+    role: "UX Researcher",
     team: "4 members",
     description:
       "Studied how people search for lost items at home — and found that the real design problem is emotional, not functional.",
