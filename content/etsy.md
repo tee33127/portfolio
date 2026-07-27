@@ -4,7 +4,7 @@ A navigation redesign for Etsy's mobile website — making it usable for first-t
 
 **Type** · Academic Project — HCI 457, DePaul University
 **Timeline** · 2024
-**Role** · Lead Designer — sitemap, wireframes, card sort restructuring
+**Role** · UX/IA Designer
 **Team** · 2 members
 
 ![Etsy sitemap — final information architecture](/images/etsy/site-map.png)
@@ -17,15 +17,19 @@ Etsy's mobile site is built for people who already know how to use Etsy. For a f
 
 **Content inventory** — We cataloged every existing category and subcategory. Mapping it out made the problem immediately visible: the structure was deep, specific, and built for browsing, not finding.
 
-**Card Sort Round 1 (n=20)** — Used the full detailed card set. Results were messy — categories overlapped, groupings varied wildly, and niche terms like "fiber arts" and "sculpting" confused participants who weren't already Etsy users.
+**Card sort setup & Round 1 (n=20)** — I designed the card sort: pulled the card set from the content inventory, configured the study, and recruited participants. Results were messy — groupings overlapped wildly and niche terms like "fiber arts" and "sculpting" confused anyone who wasn't already an Etsy user.
 
-**Card Sort Round 2 (n=12)** — I made a deliberate call: the cards were too specific. I consolidated to broader, more natural category names — the way people think before they know what they're looking for. Round 2 was significantly cleaner.
+**Card simplification & Round 2 (n=12)** — I made a deliberate call to consolidate the cards to broader, more natural category names before running Round 2. The groupings came out significantly cleaner and gave me a clear foundation for the sitemap. (See Key Decision below.)
 
 **Treejack Round 1 (n=13)** — 67% success rate, 65% directness. Four participants abandoned. Task scores: 4–6/10.
 
 **Treejack Round 2 (n=8)** — After refining the structure: 94% success rate, 78% directness. Task scores: 7–10/10.
 
-**First Click Testing (n=20)** — Two key tasks, 90% success rate on both, average completion under 12 seconds.
+**First-click testing (n=20)** — I designed two task scenarios and ran first-click testing to validate the final navigation before moving to visual design. 90% success rate on both tasks, average completion under 12 seconds.
+
+**Sitemap** — With the validated structure confirmed, I created the final sitemap — a flatter, cleaner hierarchy built around how users actually grouped and navigated the content.
+
+**Wireframes & hi-fi** — I produced all screens in Figma from lo-fi through hi-fi: homepage browse view, category pages, and product listing page. The hi-fi work translated the IA decisions directly into visual, testable screens.
 
 | Method | Round 1 | Round 2 |
 |---|---|---|

@@ -4,7 +4,7 @@ A user research study on how people search for lost items at home — and what a
 
 **Type** · Academic Research Study — HCI 445, DePaul University
 **Timeline** · Spring 2024
-**Role** · Researcher — observation, interviews, analysis
+**Role** · UX Researcher
 **Team** · 4 members
 
 ![Affinity diagram — observation sessions organized by participant and theme](/images/lost-item/affinity-diagram-observation.png)
@@ -15,11 +15,13 @@ Losing things is universal. But the experience isn't just inconvenient — it's 
 
 ## Research
 
-We ran two sequential studies.
+We ran two sequential studies. I conducted two observation sessions and two interviews, contributed to both affinity diagrams, developed personas from the synthesized findings, and presented the final research to our instructor.
 
-**Observation (n=8)** — We went into participants' homes and asked them to act out searching for a commonly lost item right before leaving for the day. We watched where they looked first, how they moved through the space, and how they reacted emotionally.
+**Observation (n=8)** — We went into participants' homes and asked them to act out searching for a commonly lost item right before leaving for the day. In my sessions, I watched where people looked first, how they moved through the space, and how they reacted emotionally.
 
-**Interviews (n=8)** — Semi-structured, building on what we observed. We asked about real lost-item experiences, technology they'd used, and what would actually make them adopt a tracking solution.
+**Interviews (n=8)** — Semi-structured, building on what we observed. In my sessions, I asked participants about real lost-item experiences, technology they'd used, and what would actually make them adopt a tracking solution.
+
+**Synthesis** — The team built two affinity diagrams — one from observations, one from the full study — to surface patterns across all participants. I contributed to both and used the clustered findings to develop personas representing the distinct user types that emerged from the data.
 
 ## What We Found
 

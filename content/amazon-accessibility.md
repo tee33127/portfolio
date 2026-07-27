@@ -4,7 +4,7 @@ A usability study examining where Amazon's shopping experience breaks down for b
 
 **Type** · Academic Research Study — HCI, DePaul University
 **Timeline** · September 2024
-**Role** · Session Facilitator, Presenter
+**Role** · UX Researcher & Session Facilitator
 **Team** · 3 members
 
 ![A usability session in progress — participant navigating Amazon with a task scenario on screen](/images/amazon-accessibility/session-record.png)
@@ -21,7 +21,7 @@ We recruited 3 totally blind women through our faculty advisor, all daily JAWS s
 - P2 — 71 years old, desktop
 - P3 — 53 years old, laptop
 
-Each session ran 45–60 minutes. Participants completed three tasks: search and filter a product, add to cart, check out. We used ASQ scoring and followed up with semi-structured interviews. Findings were synthesized through affinity diagramming and inductive coding.
+I helped design the three task scenarios — search and filter a product, add to cart, check out — to reflect realistic shopping flows a blind user would actually attempt. Each session ran 45–60 minutes. I facilitated one of the three sessions: guiding the participant through the tasks, managing the recording, and taking notes in real time. We administered ASQ scoring after each task and followed up with semi-structured interviews. I ran the ASQ analysis and built the affinity diagram to synthesize findings across all three sessions. I also presented the final research report to our faculty advisor.
 
 ## What We Found
 

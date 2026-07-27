@@ -4,7 +4,7 @@ KidsConnect is a mobile chore management app for parents, teachers, and caregive
 
 **Type** · Academic Capstone — HCI 594, DePaul University
 **Timeline** · January – March 2025
-**Role** · Lead Designer, Researcher
+**Role** · UX Researcher & Design Contributor
 **Team** · 3 members
 
 ![Home, Rewards, and Members screens from the final hi-fi prototype](/images/kidsconnect/hero.png)
@@ -15,7 +15,7 @@ Parents manage chores through verbal reminders and informal agreements — no co
 
 ## Research
 
-We surveyed 23 parents, teachers, and caregivers, then ran 6 semi-structured interviews. Key findings:
+We surveyed 16 parents, teachers, and caregivers, then ran 6 semi-structured interviews. Key findings:
 
 - 81% wanted a customizable, non-monetary reward system
 - 68.8% wanted automated chore assignments based on a child's age
@@ -33,11 +33,11 @@ We committed fully to a non-financial reward system — screen time, family outi
 
 ## Testing
 
-I designed the lo-fi prototype in Figma and ran two rounds of usability testing (n=8 peer review, then n=4 target users via Maze).
+I owned the research end-to-end: designed the testing protocol, recruited participants, ran both rounds, and analyzed results in Maze — including heatmap and path analysis. ASQ (After Scenario Questionnaire) scores tracked perceived usability per task on a 1–7 scale. I also contributed directly to the design decisions that came out of each round.
 
-**Round 1:** Users confused Kids Profile with the general Profile section. The delete flow also failed — people expected a trash icon, not an Edit-then-delete flow.
+**Round 1 — Lo-fi prototype** (n=8, peer review): Users confused Kids Profile with the general Profile section. The delete flow failed — people expected a trash icon, not an Edit-then-delete path. Based on these findings, I contributed the navigation restructure and the direct-delete interaction that carried into Round 2.
 
-**Round 2:** Profile navigation fixed, scores jumped. One regression: task assignment dropped to 3.70 — users couldn't find the "+" button to start. Flagged as a priority fix via onboarding.
+**Round 2 — Hi-fi prototype via Maze** (n=4, target users): Profile navigation fixed, ASQ scores jumped across the board. Maze heatmap data showed users scanning the assign-task screen but not landing on the "+" button to start — ASQ dropped to 3.70 on that task. I flagged it as a priority fix and contributed the recommendation to surface the action through onboarding.
 
 ![Lo-fi wireframes used in Round 1 usability testing — Calendar, Home, Assign Tasks, Kids Hub, and Rewards screens](/images/kidsconnect/lofi.png)
 
@@ -48,7 +48,7 @@ I designed the lo-fi prototype in Figma and ran two rounds of usability testing 
 | Create Custom Reward | 5.90 | 6.83 |
 | Send Reminder | 5.76 | 6.70 |
 
-![Maze test results — Assign a Task flow showing 90.9% success rate and navigation overview](/images/kidsconnect/maze-report.png)
+![Maze test results — Assign a Task flow with path analysis and navigation overview](/images/kidsconnect/maze-report.png)
 
 ![Participant response log from Maze usability testing — Round 2](/images/kidsconnect/maze-report2.png)
 
