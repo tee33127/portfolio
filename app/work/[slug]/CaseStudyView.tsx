@@ -51,9 +51,9 @@ export default function CaseStudyView({
       </div>
 
       {/* Key outcome callout */}
-      <div className="w-full rounded-xl bg-zinc-100 px-6 py-5 mb-12">
-        <p className="text-xs uppercase tracking-widest text-zinc-600 mb-1">Key outcome</p>
-        <p className="text-base font-medium text-zinc-900">{study.outcome}</p>
+      <div className="w-full rounded-xl bg-zinc-100 dark:bg-zinc-900 px-6 py-5 mb-12">
+        <p className="text-xs uppercase tracking-widest text-zinc-600 dark:text-zinc-400 mb-1">Key outcome</p>
+        <p className="text-base font-medium text-zinc-900 dark:text-zinc-100">{study.outcome}</p>
       </div>
 
       {/* Case study content (stays in English) */}
