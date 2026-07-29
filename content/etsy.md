@@ -1,13 +1,6 @@
 A navigation redesign for Etsy's mobile website — making it usable for first-time visitors instead of just people who already know how to use Etsy.
 
-## Overview
-
-**Type** · Academic Project — HCI 457, DePaul University
-**Timeline** · 2024
-**Role** · UX/IA Designer
-**Team** · 2 members
-
-![Etsy sitemap — final information architecture](/images/etsy/site-map.png)
+![Etsy sitemap — final information architecture](/images/etsy/site-map.webp)
 
 ## The Problem
 
@@ -37,15 +30,15 @@ Etsy's mobile site is built for people who already know how to use Etsy. For a f
 | Treejack Directness | 65% | 78% |
 | Task Scores | 4–6 / 10 | 7–10 / 10 |
 
-![Card sort Round 2 — category groupings after restructuring](/images/etsy/card-sort-round-2.png)
+![Card sort Round 2 — category groupings after restructuring](/images/etsy/card-sort-round-2.webp)
 
 ## The Key Decision
 
 Round 1 failed because the cards were too granular. Users couldn't build a mental model of the site from niche terms they'd never encountered. The insight: navigation needs to match how people think *before* they know what they're looking for, not after. A first-time user doesn't think "I want fiber arts" — they think "I want something handmade." I restructured the categories around those broader mental models, and Round 2 confirmed it worked.
 
-![Lo-fi to hi-fi — homepage browse view](/images/etsy/lofi-hifi-wireframe.png)
+![Lo-fi to hi-fi — homepage browse view](/images/etsy/lofi-hifi-wireframe.webp)
 
-![Lo-fi to hi-fi — product listing page](/images/etsy/lofi-hifi-wireframe2.png)
+![Lo-fi to hi-fi — product listing page](/images/etsy/lofi-hifi-wireframe2.webp)
 
 ## What I Learned
 

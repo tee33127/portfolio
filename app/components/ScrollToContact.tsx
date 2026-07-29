@@ -1,10 +1,6 @@
 "use client";
-import { useLanguage } from "./LanguageProvider";
-import { i18n } from "@/lib/i18n";
 
 export default function ScrollToContact() {
-  const { lang } = useLanguage();
-
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
     const target = document.getElementById("contact");
@@ -37,7 +33,7 @@ export default function ScrollToContact() {
       onClick={handleClick}
       className="text-sm font-medium bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-lg hover:opacity-70 transition-opacity"
     >
-      {i18n.home.contactBtn[lang]}
+      Contact me
     </a>
   );
 }

@@ -1,15 +1,10 @@
 "use client";
 import Image from "next/image";
-import { useLanguage } from "@/app/components/LanguageProvider";
-import { i18n } from "@/lib/i18n";
 
 export default function AboutView() {
-  const { lang } = useLanguage();
-  const t = i18n.about;
-
   return (
     <div className="prose">
-      <h2>{t.heading[lang]}</h2>
+      <h1>About</h1>
 
       <div className="not-prose mb-8">
         <div className="w-3/4 aspect-[4/5] rounded-xl overflow-hidden">
@@ -24,62 +19,62 @@ export default function AboutView() {
         </div>
       </div>
 
-      <p>Hello, my name is Tee, and I am a UX designer, someone who likes making complex things into simple things. I am interested in why things are made the way they are in our daily lives. This interest in understanding people has been my reason to dive into user research, accessibility, and intuitive designs of products.</p>
-      <p>For me, being able to discover things, ask questions, find answers, and build solutions from scratch is as fun as getting positive feedback from users. I like working in areas where my tasks help make something useful and enjoyable for other people and accessible.</p>
-      <p>When I am not designing, I love photography, exploring, and finding the beauty in little things around us. These interests also inspire me in design work, especially when I think about human-centered experiences.</p>
+      <p>Hi, I’m Tee, a UX designer and researcher based in Bangkok, Thailand. I earned a Master’s in Human-Computer Interaction from DePaul University, where I focused on user research, accessibility, information architecture, and usability testing.</p>
+      <p>I enjoy turning complex behaviors and research findings into clear product decisions. My background in video editing and visual design taught me how to organize information, communicate ideas, and manage details without losing sight of the larger story.</p>
+      <p>I’m currently looking for UX design, product design, or UX research roles where I can help build useful and inclusive digital experiences.</p>
 
       <hr />
 
-      <h2>{t.backgroundHeading[lang]}</h2>
+      <h2>Background</h2>
 
       <p>
-        <strong>{t.edu1degree[lang]}</strong> — GPA 3.83
+        <strong>Master&apos;s in Human-Computer Interaction</strong>
         <br />
-        {t.edu1school[lang]}
+        DePaul University, Chicago · 2025
       </p>
 
       <p>
-        <strong>{t.edu2degree[lang]}</strong> — GPA 3.20
+        <strong>Bachelor&apos;s Degree in Digital Media</strong>
         <br />
-        {t.edu2school[lang]}
+        Assumption University, Bangkok · 2020
       </p>
 
-      <h2>{t.experienceHeading[lang]}</h2>
+      <h2>Experience</h2>
 
       <p>
-        <strong>{t.job1title[lang]}</strong> · {t.job1company[lang]}
+        <strong>Video Editor</strong> · Garena Online, Bangkok
         <br />
-        <span className="text-zinc-500 text-sm">{t.job1period[lang]}</span>
+        <span className="text-zinc-500 text-sm">Sep 2020 – Mar 2022</span>
         <br />
-        {t.job1desc[lang]}
-      </p>
-
-      <p>
-        <strong>{t.job2title[lang]}</strong> · {t.job2company[lang]}
-        <br />
-        <span className="text-zinc-500 text-sm">{t.job2period[lang]}</span>
-        <br />
-        {t.job2desc[lang]}
-      </p>
-
-      <h2>{t.toolsHeading[lang]}</h2>
-
-      <p>
-        <strong>{t.toolsResearchLabel[lang]}</strong>
-        <br />
-        {t.toolsResearch[lang]}
+        Video editing, motion graphics, and visual effects for in-house digital channels.
       </p>
 
       <p>
-        <strong>{t.toolsDesignLabel[lang]}</strong>
+        <strong>Graphic Design Intern</strong> · Core & Peak, Bangkok
         <br />
-        {t.toolsDesign[lang]}
+        <span className="text-zinc-500 text-sm">Jun 2019 – Aug 2019</span>
+        <br />
+        Designed marketing materials and translated brand guidelines into digital and print assets.
+      </p>
+
+      <h2>Methods & Tools</h2>
+
+      <p>
+        <strong>Research & Testing</strong>
+        <br />
+        User interviews · Usability testing · Surveys · Competitive analysis · Card sorting · Treejack testing · Affinity diagramming · Accessibility evaluation (WCAG) · ASQ / SUS scoring
       </p>
 
       <p>
-        <strong>{t.toolsVisualLabel[lang]}</strong>
+        <strong>Design & Prototyping</strong>
         <br />
-        {t.toolsVisual[lang]}
+        Figma · Wireframing · Interactive prototyping · UI design · Information architecture · Maze · Optimal Workshop
+      </p>
+
+      <p>
+        <strong>Visual & Motion</strong>
+        <br />
+        Adobe Illustrator · Photoshop · Premiere Pro · After Effects
       </p>
 
       <div className="not-prose mt-8">
@@ -89,7 +84,7 @@ export default function AboutView() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm font-medium border border-zinc-200 dark:border-zinc-700 rounded-lg px-5 py-2.5 hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
         >
-          {t.resumeBtn[lang]}
+          View resume
           <span className="text-zinc-400">↗</span>
         </a>
       </div>

@@ -1,13 +1,6 @@
 A user research study on how people search for lost items at home — and what a technology solution would need to address that goes beyond location tracking.
 
-## Overview
-
-**Type** · Academic Research Study — HCI 445, DePaul University
-**Timeline** · Spring 2024
-**Role** · UX Researcher
-**Team** · 4 members
-
-![Affinity diagram — observation sessions organized by participant and theme](/images/lost-item/affinity-diagram-observation.png)
+![Affinity diagram — observation sessions organized by participant and theme](/images/lost-item/affinity-diagram-observation.webp)
 
 ## The Problem
 
@@ -27,11 +20,11 @@ We ran two sequential studies. I conducted two observation sessions and two inte
 
 **How people search** — Nearly everyone followed the same pattern: check the usual spot, retrace steps, then expand outward. It's a spatial, instinctive process — people use their mental map of a room to narrow down possibilities.
 
-**The emotional dimension** — Even in a simulation, participants got visibly stressed. One whined to their partner. Another searched frantically. A third bit her finger anxiously while waiting for her mom to pick up the phone. Real physical reactions — to an item they knew wasn't actually lost.
+**The emotional dimension** — Even in a simulation, participants got visibly stressed. One participant repeatedly asked their partner for help while visibly frustrated. Another searched frantically. A third bit her finger anxiously while waiting for her mom to pick up the phone. Real physical reactions — to an item they knew wasn't actually lost.
 
 **What people want from technology** — Precise tracking above everything. Small and lightweight. Private — one participant raised a specific concern: multiple trackers in a bag could signal it as a high-value target for theft. And affordable, because most people don't feel losing things has a significant financial cost.
 
-![Final affinity diagram — synthesized insights and design implications](/images/lost-item/final-affinity-diagram.png)
+![Final affinity diagram — synthesized insights and design implications](/images/lost-item/final-affinity-diagram.webp)
 
 ## Design Implications
 
@@ -41,7 +34,7 @@ Key requirements: slim physical profile, emotionally supportive UX, location dat
 
 ## The Honest Limitation
 
-We couldn't simulate genuine stress. Participants knew it was an activity. We saw glimpses of real emotion even in the simulation, which suggests the instinct kicks in even when the stakes aren't real. But it wasn't the same as watching someone actually search for something they needed. If I could redo this, I'd hide something before the session without the participant knowing.
+We couldn't simulate genuine stress. Participants knew it was an activity. We saw glimpses of real emotion even in the simulation, which suggests the instinct kicks in even when the stakes aren't real. But it wasn't the same as watching someone actually search for something they needed. If I continued this research, I would use a consented diary study or contextual interviews after real lost-item experiences to capture more authentic emotional responses.
 
 ## What I Learned
 

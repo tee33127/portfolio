@@ -1,13 +1,6 @@
 KidsConnect is a mobile chore management app for parents, teachers, and caregivers. The core challenge: most existing apps tie rewards to money, which teaches kids to expect payment for basic responsibilities. We went the other direction.
 
-## Overview
-
-**Type** · Academic Capstone — HCI 594, DePaul University
-**Timeline** · January – March 2025
-**Role** · UX Researcher & Design Contributor
-**Team** · 3 members
-
-![Home, Rewards, and Members screens from the final hi-fi prototype](/images/kidsconnect/hero.png)
+![Home, Rewards, and Members screens from the final hi-fi prototype](/images/kidsconnect/hero.webp)
 
 ## The Problem
 
@@ -23,13 +16,13 @@ We surveyed 16 parents, teachers, and caregivers, then ran 6 semi-structured int
 
 Interviews confirmed a consistent theme: people wanted something simple, shared, and low-friction — not another subscription app.
 
-![Affinity diagram grouping research insights across task management, communication, technology preferences, and motivation strategies](/images/kidsconnect/affinity-diagram.png)
+![Affinity diagram grouping research insights across task management, communication, technology preferences, and motivation strategies](/images/kidsconnect/affinity-diagram.webp)
 
 ## The Key Decision
 
 We committed fully to a non-financial reward system — screen time, family outings, extra privileges — all customizable by the parent. If you pay a kid to take out the trash, they'll only do it when they're getting paid. The research backed this, but it was also just the right design philosophy. This shaped everything: the points and badges system, how rewards were framed in the UI, how much control parents had.
 
-![Early ideation — sketching out the core flows before committing to a direction](/images/kidsconnect/brainstorm.png)
+![Early ideation — sketching out the core flows before committing to a direction](/images/kidsconnect/brainstorm.webp)
 
 ## Testing
 
@@ -39,7 +32,7 @@ I owned the research end-to-end: designed the testing protocol, recruited partic
 
 **Round 2 — Hi-fi prototype via Maze** (n=4, target users): Profile navigation fixed, ASQ scores jumped across the board. Maze heatmap data showed users scanning the assign-task screen but not landing on the "+" button to start — ASQ dropped to 3.70 on that task. I flagged it as a priority fix and contributed the recommendation to surface the action through onboarding.
 
-![Lo-fi wireframes used in Round 1 usability testing — Calendar, Home, Assign Tasks, Kids Hub, and Rewards screens](/images/kidsconnect/lofi.png)
+![Lo-fi wireframes used in Round 1 usability testing — Calendar, Home, Assign Tasks, Kids Hub, and Rewards screens](/images/kidsconnect/lofi.webp)
 
 | Task | Round 1 | Round 2 |
 |---|---|---|
@@ -48,9 +41,9 @@ I owned the research end-to-end: designed the testing protocol, recruited partic
 | Create Custom Reward | 5.90 | 6.83 |
 | Send Reminder | 5.76 | 6.70 |
 
-![Maze test results — Assign a Task flow with path analysis and navigation overview](/images/kidsconnect/maze-report.png)
+![Maze test results — Assign a Task flow with path analysis and navigation overview](/images/kidsconnect/maze-report.webp)
 
-![Participant response log from Maze usability testing — Round 2](/images/kidsconnect/maze-report2.png)
+![Participant response log from Maze usability testing — Round 2](/images/kidsconnect/maze-report2.webp)
 
 ## What I'd Do Differently
 

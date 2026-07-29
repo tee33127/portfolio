@@ -3,13 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { caseStudies } from "@/lib/case-studies";
 import ScrollToContact from "./components/ScrollToContact";
-import { useLanguage } from "./components/LanguageProvider";
-import { i18n } from "@/lib/i18n";
 
 export default function Home() {
-  const { lang } = useLanguage();
-  const t = i18n.home;
-
   return (
     <>
       <section className="mb-20 flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-10">
@@ -26,7 +21,10 @@ export default function Home() {
         <div>
           <h1 className="text-4xl font-semibold tracking-tight mb-4">Teetawat</h1>
           <p className="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xl">
-            {t.description[lang]}
+            UX designer and researcher with a Master’s in Human-Computer Interaction from DePaul University. I use research, accessibility, and usability testing to make digital products clearer and easier to use.
+          </p>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-3">
+            Based in Bangkok, Thailand · Open to UX design and research roles
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <ScrollToContact />
@@ -34,15 +32,15 @@ export default function Home() {
               href="/about"
               className="text-sm font-medium border border-zinc-200 dark:border-zinc-700 text-black dark:text-white px-5 py-2.5 rounded-lg hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
             >
-              {t.aboutBtn[lang]}
+              More about me
             </Link>
           </div>
         </div>
       </section>
 
       <section>
-        <h2 className="text-xs font-medium uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-8">
-          {t.workLabel[lang]}
+        <h2 className="text-xs font-medium uppercase tracking-widest text-zinc-600 dark:text-zinc-400 mb-8">
+          Work
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {caseStudies.map((study) => (
@@ -65,11 +63,14 @@ export default function Home() {
                   <p className="text-lg font-medium text-black dark:text-white leading-snug">
                     {study.title}
                   </p>
-                  <p className="text-base text-zinc-400 dark:text-zinc-500 mt-1">
-                    {lang === "th" ? study.subtitle_th : study.subtitle}
+                  <p className="text-base text-zinc-600 dark:text-zinc-400 mt-1">
+                    {study.subtitle}
+                  </p>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+                    {study.outcome}
                   </p>
                 </div>
-                <span className="text-sm text-zinc-400 dark:text-zinc-500 shrink-0 mt-1">
+                <span className="text-sm text-zinc-600 dark:text-zinc-400 shrink-0 mt-1">
                   {study.year}
                 </span>
               </div>
