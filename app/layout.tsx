@@ -57,17 +57,32 @@ export default function RootLayout({
         </a>
         <ThemeProvider>
           <div className="max-w-5xl mx-auto px-8 sm:px-12">
-            <header className="flex items-center justify-between py-8 mb-12">
-              <Link
-                href="/"
-                className="text-sm font-medium text-black dark:text-white hover:opacity-60 transition-opacity"
-              >
-                Teetawat T.
-              </Link>
-              <nav className="flex items-center gap-6 text-sm">
-                <NavLinks />
+            <header className="py-8 mb-12">
+              <div className="flex sm:hidden items-center justify-between">
+                <Link
+                  href="/"
+                  className="text-sm font-medium text-black dark:text-white hover:opacity-60 transition-opacity"
+                >
+                  Teetawat T.
+                </Link>
                 <ThemeToggle />
+              </div>
+              <nav className="flex sm:hidden items-center gap-6 text-sm mt-4">
+                <NavLinks />
               </nav>
+
+              <div className="hidden sm:flex items-center justify-between">
+                <Link
+                  href="/"
+                  className="text-sm font-medium text-black dark:text-white hover:opacity-60 transition-opacity"
+                >
+                  Teetawat T.
+                </Link>
+                <nav className="flex items-center gap-6 text-sm">
+                  <NavLinks />
+                  <ThemeToggle />
+                </nav>
+              </div>
             </header>
             <main id="main-content" tabIndex={-1}>{children}</main>
           </div>

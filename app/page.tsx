@@ -2,7 +2,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { caseStudies } from "@/lib/case-studies";
+import { visualWork } from "@/lib/visual-work";
 import ScrollToContact from "./components/ScrollToContact";
+
+const featuredVisualWorkSlugs = ["moonlight-blade-perspective", "rov-skin-promo"];
 
 export default function Home() {
   return (
@@ -40,7 +43,7 @@ export default function Home() {
 
       <section>
         <h2 className="text-xs font-medium uppercase tracking-widest text-zinc-600 dark:text-zinc-400 mb-8">
-          Work
+          UX Case Studies
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {caseStudies.map((study) => (
@@ -77,6 +80,44 @@ export default function Home() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="mt-20">
+        <h2 className="text-xs font-medium uppercase tracking-widest text-zinc-600 dark:text-zinc-400 mb-6">
+          Visual & Motion Work
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+          {featuredVisualWorkSlugs.map((slug) => {
+            const work = visualWork.find((item) => item.slug === slug);
+            if (!work) return null;
+            return (
+              <Link key={slug} href="/visual-work" className="group block">
+                <div
+                  className="relative w-full overflow-hidden rounded-xl mb-3"
+                  style={{ aspectRatio: `${work.width} / ${work.height}` }}
+                >
+                  <Image
+                    src={work.poster}
+                    alt={work.title}
+                    fill
+                    loading="lazy"
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <p className="text-base font-medium text-black dark:text-white leading-snug">
+                  {work.title}
+                </p>
+              </Link>
+            );
+          })}
+        </div>
+        <Link
+          href="/visual-work"
+          className="text-sm font-medium text-black dark:text-white hover:opacity-60 transition-opacity"
+        >
+          View visual & motion work →
+        </Link>
       </section>
     </>
   );
