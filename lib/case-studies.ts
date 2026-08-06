@@ -65,7 +65,7 @@ export const caseStudies: CaseStudy[] = [
     role: "UX Researcher",
     team: "4 members",
     description:
-      "Studied how people search for lost items at home — and found that the real design problem is emotional, not functional.",
+      "Studied how people search for lost items at home, and found that the real design problem is emotional, not functional.",
     thumbnail: "/images/lost-item/thumbnail.webp",
     doc: "/docs/lost-item.pdf",
   },

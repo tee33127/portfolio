@@ -41,7 +41,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const study = caseStudies.find((s) => s.slug === slug);
   if (!study) return {};
-  const title = `${study.title} — Tee`;
+  const title = `${study.title}: Tee`;
   const url = `/work/${study.slug}`;
   return {
     title,

@@ -35,7 +35,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <p role="status" aria-live="polite" className="text-sm text-zinc-600 dark:text-zinc-400">
-        Thanks for reaching out — I&apos;ll get back to you soon.
+        Thanks for reaching out. I&apos;ll get back to you soon.
       </p>
     );
   }

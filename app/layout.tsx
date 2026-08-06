@@ -15,14 +15,14 @@ const geist = Geist({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://teetawat.vercel.app"),
-  title: "Teetawat T. — UX Designer & Researcher",
+  title: "Teetawat T.: UX Designer & Researcher",
   description:
     "UX Designer and Researcher based in Bangkok, Thailand. Master's in Human-Computer Interaction from DePaul University.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Teetawat T. — UX Designer & Researcher",
+    title: "Teetawat T.: UX Designer & Researcher",
     description: "UX Designer and Researcher based in Bangkok, Thailand.",
     url: "/",
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Teetawat T. — UX Designer & Researcher",
+    title: "Teetawat T.: UX Designer & Researcher",
     description: "UX Designer and Researcher based in Bangkok, Thailand.",
     images: ["/images/og-portfolio.jpg"],
   },

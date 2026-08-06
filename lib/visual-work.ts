@@ -13,7 +13,7 @@ export type VisualWork = {
 export const visualWork: VisualWork[] = [
   {
     slug: "moonlight-blade-perspective",
-    title: "Moonlight Blade — Perspective Video",
+    title: "Moonlight Blade: Perspective Video",
     role: "Motion Designer & Video Editor",
     category: "Moonlight Blade Mobile",
     type: "video",
@@ -24,7 +24,7 @@ export const visualWork: VisualWork[] = [
   },
   {
     slug: "rov-skin-promo",
-    title: "RoV — Promotional Graphic",
+    title: "RoV: Promotional Graphic",
     role: "Graphic Designer",
     category: "RoV: Realm of Valor",
     type: "image",
@@ -35,7 +35,7 @@ export const visualWork: VisualWork[] = [
   },
   {
     slug: "moonlight-blade-garena-world",
-    title: "Moonlight Blade — Garena World",
+    title: "Moonlight Blade: Garena World",
     role: "Motion Designer & Video Editor",
     category: "Moonlight Blade Mobile",
     type: "video",
@@ -46,7 +46,7 @@ export const visualWork: VisualWork[] = [
   },
   {
     slug: "fairy-tail-gajeel",
-    title: "Fairy Tail — Gajeel Video",
+    title: "Fairy Tail: Gajeel Video",
     role: "Motion Designer & Video Editor",
     category: "Fairy Tail: Forces Unite!",
     type: "video",
@@ -57,7 +57,7 @@ export const visualWork: VisualWork[] = [
   },
   {
     slug: "rov-5th-anniversary",
-    title: "RoV — 5-Year Campaign",
+    title: "RoV: 5-Year Campaign",
     role: "Graphic Designer",
     category: "RoV: Realm of Valor",
     type: "image",

@@ -4,7 +4,7 @@ import { visualWork, type VisualWork } from "@/lib/visual-work";
 import LazyVideo from "../components/LazyVideo";
 
 export const metadata: Metadata = {
-  title: "Visual & Motion Work — Tee",
+  title: "Visual & Motion Work: Tee",
   description:
     "Video editing and motion graphics work from Tee's time as a Video Editor at Garena Online.",
   alternates: {
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 
 const descriptionByType: Record<VisualWork["type"], string> = {
   video:
-    "Edited supplied footage and graphic assets. Created the sequence, character and text animation, transitions, music, and sound design.",
+    "I edited the supplied footage and graphic assets. I created the sequence, character and text animation, transitions, music, and sound design.",
   image:
-    "Created the composition using supplied character artwork. Designed the frames, typography, layout, and visual effects.",
+    "I created the composition using supplied character artwork. I designed the frames, typography, layout, and visual effects.",
 };
 
 // Below sm (640px): full width. At sm+: bounded to max-width 560px and
 // max-height 70vh (aspect ratio preserved by the child's own aspect-ratio
-// style — this class only controls the outer box's width).
+// style. This class only controls the outer box's width).
 function FeaturedWidthStyle({ width, height }: { width: number; height: number }) {
   const ratio = width / height;
   const className = `featured-media-${width}-${height}`;
@@ -126,9 +126,9 @@ export default function VisualWork() {
       </div>
 
       <p className="text-sm text-zinc-500 dark:text-zinc-500 mt-16 max-w-xl">
-        Original game footage and character artwork were supplied by Garena.
-        My contribution focused on editing, animation, composition,
-        typography, and visual presentation.
+        Garena supplied the original game footage and character artwork. My
+        contribution focused on editing, animation, composition, typography,
+        and visual presentation.
       </p>
     </div>
   );

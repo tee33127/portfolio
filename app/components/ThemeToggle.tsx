@@ -38,7 +38,7 @@ export default function ThemeToggle() {
           isDark ? "translate-x-7 bg-zinc-900" : "translate-x-0 bg-white"
         }`}
       >
-        {/* Icon — fades between sun and moon */}
+        {/* Icon: fades between sun and moon */}
         <div className={`absolute transition-opacity duration-200 ${isDark ? "opacity-0" : "opacity-100"}`}>
           <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-500">
             <circle cx="12" cy="12" r="4" />
