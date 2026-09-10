@@ -4,8 +4,18 @@ import fs from "fs";
 import path from "path";
 import sharp from "sharp";
 import { caseStudies } from "@/lib/case-studies";
+import { slugify } from "@/lib/slugify";
 import type { Metadata } from "next";
 import CaseStudyView from "./CaseStudyView";
+
+export type Section = { id: string; label: string };
+
+function extractSections(markdown: string): Section[] {
+  return [...markdown.matchAll(/^##\s+(.+)$/gm)].map((m) => ({
+    id: slugify(m[1]),
+    label: m[1],
+  }));
+}
 
 async function renderMarkdown(markdown: string): Promise<string> {
   const hrefs = [...markdown.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)].map((m) => m[1]);
@@ -24,6 +34,22 @@ async function renderMarkdown(markdown: string): Promise<string> {
     const dim = dimensions.get(href);
     const sizeAttrs = dim ? ` width="${dim.width}" height="${dim.height}"` : "";
     return `<figure><img src="${href}" alt="${text}"${sizeAttrs} loading="lazy" decoding="async" /><figcaption>${text}</figcaption></figure>`;
+  };
+  renderer.heading = ({ text, depth }) => {
+    if (depth === 2) {
+      return `<h2 id="${slugify(text)}">${text}</h2>`;
+    }
+    return `<h${depth}>${text}</h${depth}>`;
+  };
+  // A paragraph containing only an image renders as a block-level <figure>.
+  // Marked would otherwise wrap it in <p>, which the browser then splits into
+  // an empty <p> plus a sibling <figure> (invalid nesting) — harmless on its
+  // own, but that stray empty <p> becomes a real cell inside a CSS grid.
+  renderer.paragraph = (token) => {
+    if (token.tokens.length === 1 && token.tokens[0].type === "image") {
+      return renderer.image(token.tokens[0] as Parameters<typeof renderer.image>[0]);
+    }
+    return `<p>${renderer.parser.parseInline(token.tokens)}</p>`;
   };
 
   return marked(markdown, { renderer });
@@ -82,6 +108,7 @@ export default async function CaseStudyPage({
   const filePath = path.join(process.cwd(), "content", `${slug}.md`);
   const markdown = fs.readFileSync(filePath, "utf-8");
   const html = await renderMarkdown(markdown);
+  const sections = extractSections(markdown);
 
-  return <CaseStudyView study={study} html={html} />;
+  return <CaseStudyView study={study} html={html} sections={sections} />;
 }

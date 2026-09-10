@@ -53,6 +53,7 @@ body {
   color: #52525b;
   margin-top: 3rem;
   margin-bottom: 1rem;
+  scroll-margin-top: 2rem;
 }
 
 .prose h3 {
@@ -147,6 +148,26 @@ body {
 .prose figure {
   margin: 3rem 0;
   max-width: none;
+}
+
+/* Side-by-side image comparisons, e.g. before/after heatmaps */
+.prose .image-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 3rem 0;
+  max-width: none;
+}
+
+.prose .image-pair figure {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .prose .image-pair {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 .prose img {

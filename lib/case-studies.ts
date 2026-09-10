@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
     team: "3 members",
     description:
       "Led usability sessions with blind users to identify where Amazon's e-commerce experience breaks down for screen reader users.",
-    thumbnail: "/images/amazon-accessibility/thumbnail-1-edit.webp",
+    thumbnail: "/images/amazon-accessibility/amazon-accessibility-thumbnail.webp",
     doc: "/docs/amazon-accessibility.pdf",
   },
   {
