@@ -9,7 +9,7 @@ export type CaseStudy = {
   team: string
   description: string
   thumbnail: string
-  doc: string
+  doc?: string
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -26,6 +26,20 @@ export const caseStudies: CaseStudy[] = [
       "Designed a chore management app that builds responsibility in children without relying on financial incentives.",
     thumbnail: "/images/kidsconnect/thumbnail.webp",
     doc: "/docs/kidsconnect.pdf",
+  },
+  {
+    slug: "pinly",
+    title: "Pinly",
+    subtitle: "Personal place-decision assistant",
+    outcome:
+      "Turned a 25-response survey and 8-app competitive teardown into a 98-link, 32-screen prototype",
+    type: "UX/UI Design · Mobile App",
+    year: "2026",
+    role: "UX Researcher & Product Designer",
+    team: "Solo project",
+    description:
+      "Designed a mobile app that turns saved social posts into decisions you can actually act on, grounded in survey research and a full competitive teardown.",
+    thumbnail: "/images/pinly/pinly-thumbnail.webp",
   },
   {
     slug: "etsy",

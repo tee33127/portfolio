@@ -29,11 +29,13 @@ async function renderMarkdown(markdown: string): Promise<string> {
     })
   );
 
+  const escapeAttr = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+
   const renderer = new Renderer();
   renderer.image = ({ href, text }) => {
     const dim = dimensions.get(href);
     const sizeAttrs = dim ? ` width="${dim.width}" height="${dim.height}"` : "";
-    return `<figure><img src="${href}" alt="${text}"${sizeAttrs} loading="lazy" decoding="async" /><figcaption>${text}</figcaption></figure>`;
+    return `<figure><img src="${href}" alt="${escapeAttr(text)}"${sizeAttrs} decoding="async" /><figcaption>${text}</figcaption></figure>`;
   };
   renderer.heading = ({ text, depth }) => {
     if (depth === 2) {

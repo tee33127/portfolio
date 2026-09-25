@@ -3,28 +3,7 @@
 export default function ScrollToContact() {
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    const target = document.getElementById("contact");
-    if (!target) return;
-
-    const start = window.scrollY;
-    const end = target.getBoundingClientRect().top + window.scrollY;
-    const distance = end - start;
-    const duration = 900;
-    let startTime: number | null = null;
-
-    function easeInOut(t: number) {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-
-    function step(timestamp: number) {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      window.scrollTo(0, start + distance * easeInOut(progress));
-      if (progress < 1) requestAnimationFrame(step);
-    }
-
-    requestAnimationFrame(step);
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   }
 
   return (

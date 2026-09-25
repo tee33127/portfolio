@@ -44,7 +44,7 @@ export default function AboutView() {
       <p>
         <strong>Video Editor</strong> · Garena Online, Bangkok
         <br />
-        <span className="text-zinc-500 text-sm">Sep 2020 – Mar 2022</span>
+        <span className="text-zinc-500 text-sm">Sep 2020 to Mar 2022</span>
         <br />
         Video editing, motion graphics, and visual effects for in-house digital channels.
       </p>
@@ -52,7 +52,7 @@ export default function AboutView() {
       <p>
         <strong>Graphic Design Intern</strong> · Core & Peak, Bangkok
         <br />
-        <span className="text-zinc-500 text-sm">Jun 2019 – Aug 2019</span>
+        <span className="text-zinc-500 text-sm">Jun 2019 to Aug 2019</span>
         <br />
         Designed marketing materials and translated brand guidelines into digital and print assets.
       </p>

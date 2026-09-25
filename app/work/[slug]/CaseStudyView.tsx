@@ -68,17 +68,19 @@ export default function CaseStudyView({
           <div className="prose" dangerouslySetInnerHTML={{ __html: html }} />
 
           {/* Full document link */}
-          <div className="mt-12 mb-12">
-            <a
-              href={study.doc}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium border border-zinc-200 dark:border-zinc-700 rounded-lg px-5 py-2.5 hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
-            >
-              View full research report
-              <span className="text-zinc-400">↗</span>
-            </a>
-          </div>
+          {study.doc && (
+            <div className="mt-12 mb-12">
+              <a
+                href={study.doc}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium border border-zinc-200 dark:border-zinc-700 rounded-lg px-5 py-2.5 hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
+              >
+                View full research report
+                <span className="text-zinc-400">↗</span>
+              </a>
+            </div>
+          )}
 
           {/* Next project */}
           <div className="mt-16 pt-8 border-t border-zinc-100 dark:border-zinc-800">

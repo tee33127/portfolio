@@ -14,9 +14,9 @@ Etsy's mobile site is built for people who already know how to use Etsy. For a f
 
 **Card simplification & Round 2 (n=12)**: I made a deliberate call to consolidate the cards into broader, more natural category names before running Round 2. The groupings came out significantly cleaner and gave me a clear foundation for the sitemap. (See Key Decision below.)
 
-**Treejack Round 1 (n=13)**: 67% success rate, 65% directness. Four participants abandoned. Task scores: 4–6/10.
+**Treejack Round 1 (n=13)**: 67% success rate, 65% directness. Four participants abandoned. Task scores: 4 to 6 out of 10.
 
-**Treejack Round 2 (n=8)**: After refining the structure, we saw a 94% success rate and 78% directness. Task scores: 7–10/10.
+**Treejack Round 2 (n=8)**: After refining the structure, we saw a 94% success rate and 78% directness. Task scores: 7 to 10 out of 10.
 
 **First-click testing (n=20)**: I designed two task scenarios and ran first-click testing to validate the final navigation before moving to visual design. Both tasks had a 90% success rate, with average completion under 12 seconds.
 
@@ -28,7 +28,7 @@ Etsy's mobile site is built for people who already know how to use Etsy. For a f
 |---|---|---|
 | Treejack Success | 67% | 94% |
 | Treejack Directness | 65% | 78% |
-| Task Scores | 4–6 / 10 | 7–10 / 10 |
+| Task Scores | 4 to 6 / 10 | 7 to 10 / 10 |
 
 ![Card sort Round 2: category groupings after restructuring](/images/etsy/card-sort-round-2.webp)
 
