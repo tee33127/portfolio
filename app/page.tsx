@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { caseStudies } from "@/lib/case-studies";
@@ -91,7 +90,7 @@ export default function Home() {
             const work = visualWork.find((item) => item.slug === slug);
             if (!work) return null;
             return (
-              <Link key={slug} href="/visual-work" className="group block">
+              <Link key={slug} href={`/visual-work#${slug}`} className="group block">
                 <div
                   className="relative w-full overflow-hidden rounded-xl mb-3"
                   style={{ aspectRatio: `${work.width} / ${work.height}` }}

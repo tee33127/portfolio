@@ -87,19 +87,12 @@ export async function generateMetadata({
       title,
       description: study.description,
       url,
-      images: [
-        {
-          url: study.thumbnail,
-          width: 1200,
-          height: 751,
-        },
-      ],
+      // Image comes from ./opengraph-image.tsx (1200x630 PNG).
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: study.description,
-      images: [study.thumbnail],
     },
   };
 }

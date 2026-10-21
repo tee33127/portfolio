@@ -51,7 +51,7 @@ function VisualWorkCard({
   const featuredClassName = featured ? `featured-media-${work.width}-${work.height}` : undefined;
 
   return (
-    <div className={featuredClassName}>
+    <div id={work.slug} className={`scroll-mt-8 ${featuredClassName ?? ""}`}>
       {featured && <FeaturedWidthStyle width={work.width} height={work.height} />}
       <div className="overflow-hidden rounded-xl mb-4 bg-zinc-100 dark:bg-zinc-900">
         {work.type === "video" ? (
