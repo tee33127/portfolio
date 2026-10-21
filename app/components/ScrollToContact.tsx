@@ -1,9 +1,10 @@
 "use client";
+import { scrollToAndFocus } from "@/lib/scroll";
 
 export default function ScrollToContact() {
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    scrollToAndFocus("contact");
   }
 
   return (

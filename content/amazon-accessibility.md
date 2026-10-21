@@ -14,7 +14,7 @@ I facilitated one of the three sessions myself, guiding the participant through 
 
 E-commerce has made shopping more convenient than ever, unless you're blind. Screen readers narrate page content line by line: ads, banners, pop-ups, dynamic updates, all of it. What reads as a rich shopping experience to sighted users becomes a wall of noise for someone using assistive technology. Amazon, the largest e-commerce platform in the US, still doesn't meet WCAG guidelines around exactly the content that makes an experience feel "modern": dropdown menus, carousels, pop-ups, real-time updates.
 
-![Dynamic content competes for attention throughout the shopping journey.](/images/amazon-accessibility/define-shopping-and-distractions.webp)
+![Diagram of the shopping task, from search and filter to add to cart to checkout, with ads and banners, carousels, pop-ups, and live updates competing for attention at every step](/images/amazon-accessibility/define-shopping-and-distractions.webp "Dynamic content competes for attention throughout the shopping journey.")
 
 We framed the study around three questions: What specific barriers do blind and low-vision users hit with this kind of dynamic content? How do those barriers actually affect navigation and task completion, not just in theory? And what design changes would close the gap? Prior research (Lazar et al., 2007) had already catalogued what frustrates screen reader users on the web in general. We wanted to see exactly how those frustrations played out on one specific, high-stakes platform.
 
@@ -32,11 +32,11 @@ I ran the ASQ analysis and built the affinity diagram to synthesize findings acr
 
 **An unequal skill gap.** This was the finding that reframed the whole project for me. One participant couldn't get past the filter step. In a different session, another navigated the entire site (listings, filters, checkout) using only keyboard shortcuts, at a pace that looked completely ordinary. The website was identical both times. The only variable was proficiency with the tool. That gap is enormous, and it's almost entirely invisible to designers, because most accessibility testing doesn't account for it. We design for "blind users" as a single group. They're not one.
 
-![Participants experienced different levels of independence on the same website.](/images/amazon-accessibility/test-shortcut-experience.webp)
+![Diagram comparing two participants on the same Amazon website. One, less familiar with shortcuts, could not get past the filter step. Another, proficient with shortcuts, navigated listings, filters, and checkout, but pop-ups still disrupted their focus](/images/amazon-accessibility/test-shortcut-experience.webp "Participants experienced different levels of independence on the same website.")
 
-![Affinity diagram synthesizing session findings across navigation, search, cart, checkout, and accessibility support themes](/images/amazon-accessibility/affinity-diagram.webp)
+![Affinity diagram synthesizing session findings across navigation, search, cart, checkout, and accessibility support themes](/images/amazon-accessibility/affinity-diagram.webp "Affinity diagram of session findings")
 
-![Recorded ASQ scores alongside observations from three usability sessions. Even the advanced shortcut user encountered barriers.](/images/amazon-accessibility/test-scores-and-observations.webp)
+![Recorded ASQ scores and observations for three participants. P1, score 3.66, manual navigation: searched departments without shortcuts, irrelevant results and ads disrupted the search, called the accessibility line when stuck. P2, score 6.33, cart uncertainty: avoided filters and searched manually, was unsure what had been added to the cart, accessibility support varied between calls. P3, score 1.00, advanced shortcut use: used JAWS shortcuts to move around the page, completed all tasks with almost no issues, still reported missed pop-ups and timer pressure. Takeaway: task completion can hide friction](/images/amazon-accessibility/test-scores-and-observations.webp "Recorded ASQ scores and observations. Even the advanced shortcut user hit barriers.")
 
 Our recommendations followed directly from what we saw, not from a generic accessibility checklist:
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { Section } from "./page";
+import { scrollToAndFocus } from "@/lib/scroll";
 
 export default function SectionNav({ sections }: { sections: Section[] }) {
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -52,7 +53,7 @@ export default function SectionNav({ sections }: { sections: Section[] }) {
 
   const handleClick = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToAndFocus(id);
   };
 
   return (
@@ -69,7 +70,7 @@ export default function SectionNav({ sections }: { sections: Section[] }) {
                 className={`block pl-4 -ml-px border-l text-xs uppercase tracking-widest transition-colors ${
                   isActive
                     ? "border-black dark:border-white text-black dark:text-white font-medium"
-                    : "border-transparent text-zinc-500 dark:text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300"
+                    : "border-transparent text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200"
                 }`}
               >
                 {section.label}

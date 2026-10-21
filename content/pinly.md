@@ -10,9 +10,9 @@ A few of the actual threads that shaped this, one in English and one in Thai:
 
 <div class="image-pair">
 
-![Reddit r/Instagram thread: "Saved posts on Instagram are great, until you actually try to find an old one," describing thousands of saved posts with no way to sort or filter them back into view](/images/pinly/desk-research-reddit-ig-saves.webp)
+![Reddit r/Instagram thread: "Saved posts on Instagram are great, until you actually try to find an old one," describing thousands of saved posts with no way to sort or filter them back into view](/images/pinly/desk-research-reddit-ig-saves.webp "Reddit, r/Instagram")
 
-![Pantip thread asking whether Google Maps reviews actually affect the decision to visit a place](/images/pinly/desk-research-pantip-reviews.webp)
+![Pantip thread asking whether Google Maps reviews actually affect the decision to visit a place](/images/pinly/desk-research-pantip-reviews.webp "Pantip")
 
 </div>
 
@@ -20,9 +20,9 @@ And one full thread, question and replies, that got at the "if I really wanted t
 
 <div class="image-pair">
 
-![Reddit r/travel thread: "How do you keep track of places you want to visit," with 32 comments](/images/pinly/desk-research-reddit-travel-tracking.webp)
+![Reddit r/travel thread: "How do you keep track of places you want to visit," with 32 comments](/images/pinly/desk-research-reddit-travel-tracking.webp "Reddit, r/travel: the question")
 
-![Replies to that thread: some people pin everything in Google Maps and get lost in their own pins, others rely on memory alone](/images/pinly/desk-research-reddit-travel-replies.webp)
+![Replies to that thread: some people pin everything in Google Maps and get lost in their own pins, others rely on memory alone](/images/pinly/desk-research-reddit-travel-replies.webp "Reddit, r/travel: the replies")
 
 </div>
 
@@ -36,9 +36,9 @@ To test what the desk research suggested, I ran a survey of 25 responses (Aug 18
 
 <div class="image-pair">
 
-![Survey Q2 results: 60% of the 25 respondents said their most recent save was a bookmark inside a social app like Instagram, TikTok, or Facebook](/images/pinly/survey-save-method.webp)
+![Survey Q2 results: 60% of the 25 respondents said their most recent save was a bookmark inside a social app like Instagram, TikTok, or Facebook](/images/pinly/survey-save-method.webp "Survey Q2: where people saved their last place")
 
-![Survey Q7 results: only 20% found their last saved place quickly, while 60% had to search a while or dig through multiple spots before finding it](/images/pinly/survey-retrieval-outcome.webp)
+![Survey Q7 results: only 20% found their last saved place quickly, while 60% had to search a while or dig through multiple spots before finding it](/images/pinly/survey-retrieval-outcome.webp "Survey Q7: how easy it was to find it again")
 
 </div>
 
@@ -52,7 +52,7 @@ That gave me a working persona, the Saved-Engaged Decider: someone who saves pla
 
 I benchmarked Pinly against 8 direct and indirect competitors (Plotline, Mapstr, Google Maps Saved, Rhyme, Ready to Echo, Corner, Wanderlog, Beli, Apple Maps), and the gap became obvious. Every one of them treats the map as the product: save, pin, browse. None of them own the moment between "I saved this" and "can I go now?" That became the positioning. Not another place to save things, but a personal place-decision assistant built on top of saves you've already made elsewhere.
 
-![Competitive comparison across four questions users actually ask, benchmarked against saved/bookmark tools and map apps](/images/pinly/competitive-diff.webp)
+![Table comparing saved and bookmark tools, map apps, and Pinly on four questions users ask. What have I saved: all three strong. Is this place open and where is it: saved tools limited or varies, maps strong, Pinly uses place facts. I only remember saving a Japanese place: saved tools and maps leave you to dig for it, Pinly is designed around the remembered cue. Of what I saved, what fits right now: saved tools leave it to you, maps make you search broadly, Pinly makes this its core decision job. Pinly's trust boundary: places the system is unsure about stay out of decision surfaces until confirmed](/images/pinly/competitive-diff.webp "Competitive comparison across the four questions users actually ask")
 
 ## Ideate
 
@@ -62,11 +62,11 @@ That led to a specific pipeline for how a saved post becomes something trustwort
 
 "Good right now" is the feature everything else builds toward. Instead of a static archive, the home screen surfaces saved places that actually work given the moment: open now, close enough, priced right, fitting whoever you're with. It's a direct answer to the 16 of 25 people who save far more than they ever visit.
 
-![Survey Q11 results: the top reasons people cut a saved place from consideration were distance or parking (56%), a companion vetoing it (44%), and finding somewhere better (36%), which is exactly the mix "Good right now" checks for](/images/pinly/survey-exclusion-factors.webp)
+![Survey Q11 results: the top reasons people cut a saved place from consideration were distance or parking (56%), a companion vetoing it (44%), and finding somewhere better (36%), which is exactly the mix "Good right now" checks for](/images/pinly/survey-exclusion-factors.webp "Survey Q11: why people cut a saved place")
 
 From there, the path to screens went through a full information architecture (19 screens, 37 states plus one modifier), a low-fi pass to lock the flows before visual design, and a component library (22 families, 63 variants) to keep the hi-fi screens consistent.
 
-![Low-fi wireframes: home, filtered results, place detail, and the review/confirm flow](/images/pinly/lofi-wireframe.webp)
+![Low-fi wireframes: home, filtered results, place detail, and the review/confirm flow](/images/pinly/lofi-wireframe.webp "Low-fi wireframes")
 
 ## Prototype
 
@@ -78,7 +78,7 @@ Place detail answers "can I go now?" directly: hours, distance, price band, righ
 
 Review is the confirm step for batch imports, like a "5 ramen shops around Ekkamai" post. Each candidate can be confirmed one at a time or all at once, with a way to flag a wrong match before it ever reaches Confirmed Places.
 
-![Hi-fi screens: home, filtered results with "why it fits," place detail, and saved places search](/images/pinly/hifi-wireframe.webp)
+![Hi-fi screens: home, filtered results with "why it fits," place detail, and saved places search](/images/pinly/hifi-wireframe.webp "Hi-fi screens")
 
 ## Next Steps
 

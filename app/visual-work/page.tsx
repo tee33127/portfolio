@@ -85,7 +85,7 @@ function VisualWorkCard({
           </div>
         )}
       </div>
-      <p className="text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-500 mb-1">
+      <p className="text-xs uppercase tracking-widest text-zinc-600 dark:text-zinc-400 mb-1">
         {work.category}
       </p>
       <p className="text-lg font-medium text-black dark:text-white leading-snug">
@@ -94,7 +94,7 @@ function VisualWorkCard({
       <p className="text-base text-zinc-600 dark:text-zinc-400 mt-1">
         {work.role}
       </p>
-      <p className="text-sm text-zinc-500 dark:text-zinc-500 mt-2 leading-relaxed">
+      <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
         {descriptionByType[work.type]}
       </p>
     </div>
@@ -125,7 +125,7 @@ export default function VisualWork() {
         ))}
       </div>
 
-      <p className="text-sm text-zinc-500 dark:text-zinc-500 mt-16 max-w-xl">
+      <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-16 max-w-xl">
         Garena supplied the original game footage and character artwork. My
         contribution focused on editing, animation, composition, typography,
         and visual presentation.

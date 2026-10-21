@@ -30,15 +30,15 @@ Etsy's mobile site is built for people who already know how to use Etsy. For a f
 | Treejack Directness | 65% | 78% |
 | Task Scores | 4 to 6 / 10 | 7 to 10 / 10 |
 
-![Card sort Round 2: category groupings after restructuring](/images/etsy/card-sort-round-2.webp)
+![Card sort Round 2: category groupings after restructuring](/images/etsy/card-sort-round-2.webp "Card sort, Round 2")
 
 ## The Key Decision
 
 Round 1 failed because the cards were too granular. Users couldn't build a mental model of the site from niche terms they'd never encountered. The insight: navigation needs to match how people think *before* they know what they're looking for, not after. A first-time user doesn't think "I want fiber arts." They think "I want something handmade." I restructured the categories around those broader mental models, and Round 2 confirmed it worked.
 
-![Lo-fi to hi-fi: homepage browse view](/images/etsy/lofi-hifi-wireframe.webp)
+![Lo-fi to hi-fi: homepage browse view](/images/etsy/lofi-hifi-wireframe.webp "Homepage browse view, lo-fi to hi-fi")
 
-![Lo-fi to hi-fi: product listing page](/images/etsy/lofi-hifi-wireframe2.webp)
+![Lo-fi to hi-fi: product listing page](/images/etsy/lofi-hifi-wireframe2.webp "Product listing page, lo-fi to hi-fi")
 
 ## What I Learned
 

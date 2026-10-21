@@ -55,10 +55,10 @@ export default function Home() {
               <div className="overflow-hidden rounded-xl mb-5">
                 <Image
                   src={study.thumbnail}
-                  alt={study.title}
+                  alt=""
                   width={800}
                   height={500}
-                  className="w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.02]"
                 />
               </div>
               <div className="flex items-start justify-between gap-2">
@@ -98,11 +98,11 @@ export default function Home() {
                 >
                   <Image
                     src={work.poster}
-                    alt={work.title}
+                    alt=""
                     fill
                     loading="lazy"
                     sizes="(min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.02]"
                   />
                 </div>
                 <p className="text-base font-medium text-black dark:text-white leading-snug">

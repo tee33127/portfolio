@@ -24,7 +24,7 @@ We ran two sequential studies. I conducted two observation sessions and two inte
 
 **What people want from technology**: Precise tracking above everything. Small and lightweight. Private: one participant raised a specific concern that multiple trackers in a bag could signal it as a high-value target for theft. And affordable, because most people don't feel losing things has a significant financial cost.
 
-![Final affinity diagram: synthesized insights and design implications](/images/lost-item/final-affinity-diagram.webp)
+![Final affinity diagram: synthesized insights and design implications](/images/lost-item/final-affinity-diagram.webp "Final affinity diagram")
 
 ## Design Implications
 

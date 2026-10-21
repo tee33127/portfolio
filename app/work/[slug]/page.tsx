@@ -18,7 +18,7 @@ function extractSections(markdown: string): Section[] {
 }
 
 async function renderMarkdown(markdown: string): Promise<string> {
-  const hrefs = [...markdown.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)].map((m) => m[1]);
+  const hrefs = [...markdown.matchAll(/!\[[^\]]*\]\(([^)\s]+)/g)].map((m) => m[1]);
   const dimensions = new Map<string, { width: number; height: number }>();
   await Promise.all(
     hrefs.map(async (href) => {
@@ -30,12 +30,18 @@ async function renderMarkdown(markdown: string): Promise<string> {
   );
 
   const escapeAttr = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+  const escapeHtml = (s: string) =>
+    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+  // Markdown alt text becomes the image's alt. A visible caption only appears
+  // when the image has a markdown title: ![alt](src "caption"). Using alt as
+  // the caption too made screen readers announce the same text twice.
   const renderer = new Renderer();
-  renderer.image = ({ href, text }) => {
+  renderer.image = ({ href, title, text }) => {
     const dim = dimensions.get(href);
     const sizeAttrs = dim ? ` width="${dim.width}" height="${dim.height}"` : "";
-    return `<figure><img src="${href}" alt="${escapeAttr(text)}"${sizeAttrs} decoding="async" /><figcaption>${text}</figcaption></figure>`;
+    const caption = title ? `<figcaption>${escapeHtml(title)}</figcaption>` : "";
+    return `<figure><img src="${href}" alt="${escapeAttr(text)}"${sizeAttrs} decoding="async" />${caption}</figure>`;
   };
   renderer.heading = ({ text, depth }) => {
     if (depth === 2) {

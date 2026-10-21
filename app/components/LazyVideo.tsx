@@ -15,15 +15,16 @@ type LazyVideoProps = {
 const overlayIcon = (
   <span className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-colors">
     <span className="flex items-center justify-center w-16 h-16 rounded-full bg-white/90 group-hover:bg-white transition-colors">
-      <svg viewBox="0 0 24 24" className="w-6 h-6 ml-1 fill-black">
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="w-6 h-6 ml-1 fill-black">
         <path d="M8 5v14l11-7z" />
       </svg>
     </span>
   </span>
 );
 
+// Black and white double ring, so focus stays visible on light and dark posters.
 const focusRing = (
-  <span className="absolute inset-0 ring-4 ring-inset ring-white opacity-0 group-focus-visible:opacity-100 transition-opacity" />
+  <span className="absolute inset-0 shadow-[inset_0_0_0_3px_#09090b,inset_0_0_0_6px_#ffffff] opacity-0 group-focus-visible:opacity-100 transition-opacity" />
 );
 
 export default function LazyVideo({

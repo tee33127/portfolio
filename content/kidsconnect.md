@@ -39,7 +39,7 @@ If you pay a kid to take out the trash, they'll only do it when they're getting 
 
 I designed the lo-fi prototype in Figma, covering the core flows: assigning tasks, creating rewards, managing children's profiles, and sending reminders.
 
-![Lo-fi wireframes used in Round 1 usability testing: Calendar, Home, Assign Tasks, Kids Hub, and Rewards screens](/images/kidsconnect/lofi.webp)
+![Lo-fi wireframes used in Round 1 usability testing: Calendar, Home, Assign Tasks, Kids Hub, and Rewards screens](/images/kidsconnect/lofi.webp "Lo-fi wireframes used in Round 1 testing")
 
 Two rounds of usability testing (below) pushed this into the hi-fi version shown at the top of this page. The biggest structural change was separating Kids Profile from the general Profile section after Round 1 exposed how badly they were being confused for each other.
 
@@ -53,9 +53,9 @@ I owned the research from start to finish. I designed the testing protocol, recr
 
 <div class="image-pair">
 
-![Round 1 heatmap: clicks concentrated on the wrong tab-bar icon, not Kids Hub](/images/kidsconnect/heatmap-round1.webp)
+![Round 1 heatmap: clicks concentrated on the wrong tab-bar icon, not Kids Hub](/images/kidsconnect/heatmap-round1.webp "Round 1: clicks land on the wrong tab")
 
-![Round 2 heatmap: clicks now land correctly on Kids Hub after the navigation fix](/images/kidsconnect/heatmap-round2.webp)
+![Round 2 heatmap: clicks now land correctly on Kids Hub after the navigation fix](/images/kidsconnect/heatmap-round2.webp "Round 2: clicks land on Kids Hub")
 
 </div>
 
@@ -70,9 +70,9 @@ ASQ scores jumped across the board:
 
 One regression: **Task Assignment dropped to 3.70.** Maze's path data showed users scanning the assign-task screen but never landing on the "+" button to start. It wasn't a comprehension problem, it was a discoverability one. The interaction worked fine once found. I flagged it as the top priority fix and recommended surfacing it through onboarding rather than restructuring the screen, since everything else on it tested well.
 
-![Maze test results: Assign a Task flow with path analysis and navigation overview](/images/kidsconnect/maze-report.webp)
+![Maze test results: Assign a Task flow with path analysis and navigation overview](/images/kidsconnect/maze-report.webp "Maze path analysis for the Assign a Task flow")
 
-![Participant response log from Maze usability testing, Round 2](/images/kidsconnect/maze-report2.webp)
+![Participant response log from Maze usability testing, Round 2](/images/kidsconnect/maze-report2.webp "Participant responses from Round 2")
 
 ## Reflect
 

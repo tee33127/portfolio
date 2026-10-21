@@ -15,11 +15,11 @@ function useMounted() {
 }
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const mounted = useMounted();
   if (!mounted) return <div className="w-14 h-7" />;
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button

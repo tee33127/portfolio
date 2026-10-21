@@ -17,6 +17,50 @@ body {
   color: #f4f4f5;
 }
 
+/* Visible keyboard focus on every link and control. Components that draw
+   their own ring (form fields, buttons with focus-visible:ring) override this
+   with focus:outline-none. Elements focused by script (tabindex="-1", like
+   <main> after "Skip to main content") don't get an outline. */
+@layer base {
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible,
+  [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 2px solid #18181b;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  .dark a:focus-visible,
+  .dark button:focus-visible,
+  .dark summary:focus-visible,
+  .dark [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline-color: #f4f4f5;
+  }
+
+  [tabindex="-1"]:focus {
+    outline: none;
+  }
+}
+
+/* Respect the OS "reduce motion" setting: no smooth scrolling, no
+   transitions or animations. Hover zoom and arrow nudges also use
+   Tailwind's motion-safe: variant, so they don't jump either. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Prose styles for rendered markdown */
 .prose {
   font-size: 1.1rem;
@@ -200,7 +244,7 @@ body {
 }
 
 .dark .prose h2 {
-  color: #71717a;
+  color: #a1a1aa;
 }
 
 .dark .prose p {
@@ -246,7 +290,7 @@ body {
 }
 
 .dark .prose figcaption {
-  color: #52525b;
+  color: #a1a1aa;
 }
 
 .dark .prose code {

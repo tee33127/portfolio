@@ -77,7 +77,8 @@ export default function CaseStudyView({
                 className="inline-flex items-center gap-2 text-sm font-medium border border-zinc-200 dark:border-zinc-700 rounded-lg px-5 py-2.5 hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
               >
                 View full research report
-                <span className="text-zinc-400">↗</span>
+                <span className="text-zinc-400" aria-hidden="true">↗</span>
+                <span className="sr-only">(opens in a new tab)</span>
               </a>
             </div>
           )}
@@ -90,7 +91,7 @@ export default function CaseStudyView({
               className="group inline-flex items-baseline gap-2 font-medium text-black dark:text-white hover:opacity-60 transition-opacity"
             >
               {next.title}
-              <span className="text-zinc-400 group-hover:translate-x-0.5 transition-transform inline-block">→</span>
+              <span aria-hidden="true" className="text-zinc-400 motion-safe:group-hover:translate-x-0.5 transition-transform inline-block">→</span>
             </Link>
           </div>
         </div>
