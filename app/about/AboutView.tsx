@@ -79,13 +79,14 @@ export default function AboutView() {
 
       <div className="not-prose mt-8">
         <a
-          href="/Updated_Resume_Teetawat.pdf"
+          href="/Teetawat_Trakulsuebchai_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm font-medium border border-zinc-200 dark:border-zinc-700 rounded-lg px-5 py-2.5 hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
         >
           View resume
-          <span className="text-zinc-400">↗</span>
+          <span className="text-zinc-400" aria-hidden="true">↗</span>
+          <span className="sr-only">(opens in a new tab)</span>
         </a>
       </div>
     </div>

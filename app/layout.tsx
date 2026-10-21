@@ -56,7 +56,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <ThemeProvider>
-          <div className="max-w-5xl mx-auto px-8 sm:px-12">
+          <div className="max-w-5xl mx-auto px-5 sm:px-12">
             <header className="py-8 mb-12">
               <div className="flex sm:hidden items-center justify-between">
                 <Link
@@ -67,7 +67,7 @@ export default function RootLayout({
                 </Link>
                 <ThemeToggle />
               </div>
-              <nav className="flex sm:hidden items-center gap-6 text-sm mt-4">
+              <nav className="flex sm:hidden items-center gap-4 text-sm mt-4">
                 <NavLinks />
               </nav>
 
@@ -87,7 +87,7 @@ export default function RootLayout({
             <main id="main-content" tabIndex={-1}>{children}</main>
           </div>
           <footer id="contact" className="mt-24 bg-zinc-100 dark:bg-zinc-900">
-            <div className="max-w-5xl mx-auto px-8 sm:px-12">
+            <div className="max-w-5xl mx-auto px-5 sm:px-12">
               <div style={{ paddingTop: "30px", paddingBottom: "30px" }}>
                 <FooterHeading />
                 <ContactForm />
@@ -100,6 +100,16 @@ export default function RootLayout({
                     className="hover:text-black dark:hover:text-white transition-colors"
                   >
                     tee33127@gmail.com
+                  </a>{" "}
+                  ·{" "}
+                  <a
+                    href="https://www.linkedin.com/in/teetawatt/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-black dark:hover:text-white transition-colors"
+                  >
+                    LinkedIn <span aria-hidden="true">↗</span>
+                    <span className="sr-only">(opens in a new tab)</span>
                   </a>
                 </p>
               </div>
