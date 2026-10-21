@@ -77,6 +77,8 @@ const pairs = [
   ["Light: form placeholder", "zinc-500", "white", "text"],
   ["Light: form error message", "red-700", "zinc-100", "text"],
   ["Light: primary button text", "white", "black", "text"],
+  ["Light: form field border vs field", "#85858e", "white", "ui"],
+  ["Light: form field border vs footer", "#85858e", "zinc-100", "ui"],
   ["Light: focus outline on page", "#18181b", "white", "ui"],
   ["Light: focus outline in footer", "#18181b", "zinc-100", "ui"],
 
@@ -94,6 +96,8 @@ const pairs = [
   ["Dark: form placeholder", "zinc-400", "zinc-800", "text"],
   ["Dark: form error message", "red-400", "zinc-900", "text"],
   ["Dark: primary button text", "black", "white", "text"],
+  ["Dark: form field border vs field", "#707079", "zinc-800", "ui"],
+  ["Dark: form field border vs footer", "#707079", "zinc-900", "ui"],
   ["Dark: focus outline on page", "#f4f4f5", "zinc-950", "ui"],
   ["Dark: focus outline in footer", "#f4f4f5", "zinc-900", "ui"],
 ];
