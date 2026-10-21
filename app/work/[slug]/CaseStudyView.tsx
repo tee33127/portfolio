@@ -64,6 +64,25 @@ export default function CaseStudyView({
             <p className="text-base font-medium text-zinc-900 dark:text-zinc-100">{study.outcome}</p>
           </div>
 
+          {/* At a glance */}
+          <section aria-labelledby="at-a-glance" className="mb-12">
+            <h2 id="at-a-glance" className="text-xs uppercase tracking-widest text-zinc-600 dark:text-zinc-400 mb-4">
+              At a glance
+            </h2>
+            <dl className="space-y-4 max-w-[68ch]">
+              {[
+                ["Problem", study.problem],
+                ["What I did", study.myContribution],
+                ["Result", study.result],
+              ].map(([label, text]) => (
+                <div key={label} className="sm:grid sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-6">
+                  <dt className="text-sm font-medium text-black dark:text-white mb-1 sm:mb-0">{label}</dt>
+                  <dd className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">{text}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+
           {/* Case study content (stays in English) */}
           <div className="prose" dangerouslySetInnerHTML={{ __html: html }} />
 

@@ -20,7 +20,7 @@ export default function AboutView() {
       </div>
 
       <p>Hi, I’m Tee, a UX designer and researcher based in Bangkok, Thailand. I earned a Master’s in Human-Computer Interaction from DePaul University, where I focused on user research, accessibility, information architecture, and usability testing.</p>
-      <p>I enjoy turning complex behaviors and research findings into clear product decisions. My background in video editing and visual design taught me how to organize information, communicate ideas, and manage details without losing sight of the larger story.</p>
+      <p>I enjoy turning complex behaviors and research findings into clear product decisions. My background in video editing and visual design taught me how to organize information, communicate ideas, and manage details without losing sight of the larger story. I also designed and built this portfolio myself with Next.js, using Claude Code as my coding partner, and deployed it on Vercel.</p>
       <p>I’m currently looking for UX design, product design, or UX research roles where I can help build useful and inclusive digital experiences.</p>
 
       <hr />
@@ -37,6 +37,14 @@ export default function AboutView() {
         <strong>Bachelor&apos;s Degree in Digital Media</strong>
         <br />
         Assumption University, Bangkok · 2020
+      </p>
+
+      <h2>Certifications</h2>
+
+      <p>
+        <strong>Unlock Skill UX/UI (cohort 51)</strong>
+        <br />
+        UXUI Studio, Bangkok · Sep 2026
       </p>
 
       <h2>Experience</h2>
@@ -75,6 +83,12 @@ export default function AboutView() {
         <strong>Visual & Motion</strong>
         <br />
         Adobe Illustrator · Photoshop · Premiere Pro · After Effects
+      </p>
+
+      <p>
+        <strong>AI-assisted design</strong>
+        <br />
+        Claude · Claude Code for prototyping · n8n for automation workflows
       </p>
 
       <div className="not-prose mt-8">
