@@ -2,18 +2,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { caseStudies } from "@/lib/case-studies";
 import { visualWork } from "@/lib/visual-work";
-import ScrollToContact from "./components/ScrollToContact";
+import type { Dictionary } from "@/lib/i18n";
+import ScrollToContact from "./ScrollToContact";
 
 const featuredVisualWorkSlugs = ["moonlight-blade-perspective", "rov-skin-promo"];
 
-export default function Home() {
+// Homepage for both languages. Case study cards always link to the English
+// case studies; on the Thai page, their subtitle and outcome are translated.
+export default function HomeView({ t }: { t: Dictionary }) {
   return (
     <>
       <section className="mb-20 flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-10">
         <div className="w-[240px] h-[240px] rounded-full overflow-hidden shrink-0">
           <Image
             src="/images/profile.jpg"
-            alt="Teetawat"
+            alt={t.home.photoAlt}
             width={240}
             height={240}
             className="w-full h-full object-cover"
@@ -21,69 +24,74 @@ export default function Home() {
           />
         </div>
         <div>
-          <h1 className="text-4xl font-semibold tracking-tight mb-4">Teetawat</h1>
+          <h1 className="text-4xl font-semibold tracking-tight mb-4">{t.home.name}</h1>
           <p className="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xl">
-            UX designer and researcher with a Master’s in Human-Computer Interaction from DePaul University. I use research, accessibility, and usability testing to make digital products clearer and easier to use.
+            {t.home.intro}
           </p>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-3">
-            Based in Bangkok, Thailand · Open to UX design and research roles
-          </p>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-3">{t.home.location}</p>
           <div className="flex flex-col sm:flex-row gap-3 mt-6">
-            <ScrollToContact />
+            <ScrollToContact label={t.home.contact} />
             <Link
-              href="/about"
+              href={t.paths.about}
               className="text-sm font-medium border border-zinc-200 dark:border-zinc-700 text-black dark:text-white px-5 py-2.5 rounded-lg hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
             >
-              More about me
+              {t.home.moreAbout}
             </Link>
           </div>
         </div>
       </section>
 
       <section>
-        <h2 className="text-xs font-medium uppercase tracking-widest text-zinc-600 dark:text-zinc-400 mb-8">
-          UX Case Studies
+        <h2
+          className={`text-xs font-medium uppercase tracking-widest text-zinc-600 dark:text-zinc-400 ${
+            t.home.caseStudiesNote ? "mb-2" : "mb-8"
+          }`}
+        >
+          {t.home.caseStudiesHeading}
         </h2>
+        {t.home.caseStudiesNote && (
+          <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-8">{t.home.caseStudiesNote}</p>
+        )}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-          {caseStudies.map((study) => (
-            <Link
-              key={study.slug}
-              href={`/work/${study.slug}`}
-              className="group block"
-            >
-              <div className="overflow-hidden rounded-xl mb-5">
-                <Image
-                  src={study.thumbnail}
-                  alt=""
-                  width={800}
-                  height={500}
-                  className="w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.02]"
-                />
-              </div>
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <p className="text-lg font-medium text-black dark:text-white leading-snug">
-                    {study.title}
-                  </p>
-                  <p className="text-base text-zinc-600 dark:text-zinc-400 mt-1">
-                    {study.subtitle}
-                  </p>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
-                    {study.outcome}
-                  </p>
+          {caseStudies.map((study) => {
+            const card = t.home.cards[study.slug] ?? study;
+            return (
+              <Link
+                key={study.slug}
+                href={`/work/${study.slug}`}
+                hrefLang={t.lang === "en" ? undefined : "en"}
+                className="group block"
+              >
+                <div className="overflow-hidden rounded-xl mb-5">
+                  <Image
+                    src={study.thumbnail}
+                    alt=""
+                    width={800}
+                    height={500}
+                    className="w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.02]"
+                  />
                 </div>
-                <span className="text-sm text-zinc-600 dark:text-zinc-400 shrink-0 mt-1">
-                  {study.year}
-                </span>
-              </div>
-            </Link>
-          ))}
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <p lang="en" className="text-lg font-medium text-black dark:text-white leading-snug">
+                      {study.title}
+                    </p>
+                    <p className="text-base text-zinc-600 dark:text-zinc-400 mt-1">{card.subtitle}</p>
+                    <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">{card.outcome}</p>
+                  </div>
+                  <span className="text-sm text-zinc-600 dark:text-zinc-400 shrink-0 mt-1">
+                    {study.year}
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
       <section className="mt-20">
         <h2 className="text-xs font-medium uppercase tracking-widest text-zinc-600 dark:text-zinc-400 mb-6">
-          Visual & Motion Work
+          {t.home.visualHeading}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
           {featuredVisualWorkSlugs.map((slug) => {
@@ -104,7 +112,7 @@ export default function Home() {
                     className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.02]"
                   />
                 </div>
-                <p className="text-base font-medium text-black dark:text-white leading-snug">
+                <p lang="en" className="text-base font-medium text-black dark:text-white leading-snug">
                   {work.title}
                 </p>
               </Link>
@@ -115,7 +123,7 @@ export default function Home() {
           href="/visual-work"
           className="text-sm font-medium text-black dark:text-white hover:opacity-60 transition-opacity"
         >
-          View visual & motion work →
+          {t.home.visualLink} <span aria-hidden="true">→</span>
         </Link>
       </section>
     </>

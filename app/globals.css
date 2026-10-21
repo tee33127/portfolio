@@ -17,6 +17,31 @@ body {
   color: #f4f4f5;
 }
 
+/* Thai pages (/th): Geist for Latin text, IBM Plex Sans Thai for Thai
+   characters. Thai needs a looser line height, and uppercase plus wide
+   letter-spacing doesn't apply to Thai script, so headings and labels
+   drop it and get slightly bigger to stay readable. */
+html[lang="th"] body {
+  font-family: var(--font-geist), var(--font-thai), ui-sans-serif, system-ui, sans-serif;
+}
+
+html[lang="th"] :is(p, li, dd) {
+  line-height: 1.9;
+}
+
+html[lang="th"] :is(.uppercase, .prose h2) {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+html[lang="th"] .text-xs {
+  font-size: 0.875rem;
+}
+
+html[lang="th"] .prose h2 {
+  font-size: 0.95rem;
+}
+
 /* Visible keyboard focus on every link and control. Components that draw
    their own ring (form fields, buttons with focus-visible:ring) override this
    with focus:outline-none. Elements focused by script (tabindex="-1", like

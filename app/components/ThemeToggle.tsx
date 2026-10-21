@@ -14,7 +14,11 @@ function useMounted() {
   );
 }
 
-export default function ThemeToggle() {
+export default function ThemeToggle({
+  labels,
+}: {
+  labels: { toDark: string; toLight: string };
+}) {
   const { resolvedTheme, setTheme } = useTheme();
   const mounted = useMounted();
   if (!mounted) return <div className="w-14 h-7" />;
@@ -24,7 +28,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={isDark ? labels.toLight : labels.toDark}
       aria-pressed={isDark}
       className={`relative w-14 h-7 rounded-full p-0.5 border transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 dark:focus-visible:ring-zinc-400 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-900 cursor-pointer ${
         isDark

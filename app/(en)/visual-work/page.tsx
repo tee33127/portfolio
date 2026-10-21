@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { visualWork, type VisualWork } from "@/lib/visual-work";
-import LazyVideo from "../components/LazyVideo";
+import LazyVideo from "@/app/components/LazyVideo";
 
 export const metadata: Metadata = {
   title: "Visual & Motion Work: Tee",

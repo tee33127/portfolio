@@ -1,26 +1,25 @@
 import Link from "next/link";
+import { RESUME_PATH, type Dictionary } from "@/lib/i18n";
 
-export default function NavLinks() {
+const linkClass =
+  "whitespace-nowrap text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors";
+
+export default function NavLinks({ t }: { t: Dictionary }) {
   return (
     <>
-      <Link href="/" className="whitespace-nowrap text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
-        UX Work
+      <Link href={t.paths.home} className={linkClass}>
+        {t.nav.work}
       </Link>
-      <Link href="/visual-work" aria-label="Visual & Motion" className="whitespace-nowrap text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
-        <span className="sm:hidden">Visual</span>
-        <span className="hidden sm:inline">Visual & Motion</span>
+      <Link href="/visual-work" aria-label={t.nav.visual} className={linkClass}>
+        <span className="sm:hidden">{t.nav.visualShort}</span>
+        <span className="hidden sm:inline">{t.nav.visual}</span>
       </Link>
-      <Link href="/about" className="whitespace-nowrap text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
-        About
+      <Link href={t.paths.about} className={linkClass}>
+        {t.nav.about}
       </Link>
-      <a
-        href="/Teetawat_Trakulsuebchai_Resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whitespace-nowrap text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
-      >
-        Resume <span aria-hidden="true">↗</span>
-        <span className="sr-only">(opens in a new tab)</span>
+      <a href={RESUME_PATH} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        {t.nav.resume} <span aria-hidden="true">↗</span>
+        <span className="sr-only">{t.common.newTab}</span>
       </a>
     </>
   );

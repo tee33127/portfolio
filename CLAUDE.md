@@ -23,8 +23,10 @@
 - Visual work videos: `public/media/visual-work/`
 - Case study PDF reports: `public/docs/`
 - Resume: `public/` (PDF)
-- Nav, header, footer and contact form: `app/layout.tsx` and `app/components/`
-- Case study template: `app/work/[slug]/` (`page.tsx`, `CaseStudyView.tsx`, `SectionNav.tsx`)
+- UI text for both languages (nav, homepage, About, footer, form): `lib/i18n.ts`
+- English pages: `app/(en)/`. Thai pages: `app/th/` (own root layout, `<html lang="th">`, Thai font)
+- Shared header, footer and contact form: `app/components/SiteShell.tsx` and `app/components/`
+- Case study template: `app/(en)/work/[slug]/` (`page.tsx`, `CaseStudyView.tsx`, `SectionNav.tsx`)
 
 ## Rules
 - I'm not a developer. Keep solutions simple and avoid adding dependencies unless they're needed.
