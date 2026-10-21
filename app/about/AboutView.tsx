@@ -9,7 +9,7 @@ export default function AboutView() {
       <div className="not-prose mb-8">
         <div className="w-3/4 aspect-[4/5] rounded-xl overflow-hidden">
           <Image
-            src="/images/about-image.JPG"
+            src="/images/about-image.jpg"
             alt="Teetawat"
             width={800}
             height={360}

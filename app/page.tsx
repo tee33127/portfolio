@@ -12,7 +12,7 @@ export default function Home() {
       <section className="mb-20 flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-10">
         <div className="w-[240px] h-[240px] rounded-full overflow-hidden shrink-0">
           <Image
-            src="/images/profile.JPG"
+            src="/images/profile.jpg"
             alt="Teetawat"
             width={240}
             height={240}
