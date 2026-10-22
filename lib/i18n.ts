@@ -248,7 +248,7 @@ const th: Dictionary = {
         items: "Claude · Claude Code สำหรับทำ prototype · n8n สำหรับ automation workflow",
       },
     ],
-    resume: "เรซูเม่",
+    resume: "ดูเรซูเม่",
   },
   visual: {
     heading: "งานภาพและโมชัน",
