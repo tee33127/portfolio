@@ -45,7 +45,7 @@ Two rounds of usability testing (below) pushed this into the hi-fi version shown
 
 ## Test
 
-I owned the research from start to finish. I designed the testing protocol, recruited participants, ran both rounds, and analyzed the results in Maze, including success rate, drop-off, misclick rate, and heatmap/path analysis. ASQ (After Scenario Questionnaire) scores tracked perceived usability per task on a 1 to 7 scale. I also helped shape the design decisions that came out of each round.
+I owned the research from start to finish. I designed the testing protocol, recruited participants, ran both rounds, and analyzed the results in Maze, including success rate, drop-off, misclick rate, and heatmap/path analysis. ASQ (After Scenario Questionnaire) scores tracked perceived usability per task on a 1 to 7 scale, where higher means easier. I also helped shape the design decisions that came out of each round.
 
 **Round 1: Lo-fi prototype** (n=8, peer review). Users confused Kids Profile with the general Profile section, and the heatmap showed why: clicks concentrated on the wrong nav icon entirely. The delete flow failed for the same underlying reason, since people expected a trash icon, not an edit-then-delete path. Assigning a task scored well on paper (90.9% success), but a 39.8% misclick rate said the flow was more effortful than it should be. Based on these findings, I proposed the navigation restructure and the direct-delete interaction that carried into Round 2.
 

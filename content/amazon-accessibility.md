@@ -6,7 +6,7 @@ A usability study examining where Amazon's shopping experience breaks down for b
 
 We recruited three blind women, ages 53 to 76, through our faculty advisor, Professor Oliver Alonzo. All three rely on JAWS daily (two on desktop, one on laptop), but their proficiency with it varied widely, which turned out to matter more than anything else in this study.
 
-I helped design the three task scenarios: search and filter a product, add it to cart, and check out. These were realistic shopping flows a blind user would actually attempt, not artificial lab tasks. Before each task we asked participants to rate how difficult they expected it to be; after each one, they completed an ASQ (After-Scenario Questionnaire) and walked through a semi-structured interview. Each session ran 45 to 60 minutes, with the consent form read aloud at the start so participants could confirm understanding before we began.
+I helped design the three task scenarios: search and filter a product, add it to cart, and check out. These were realistic shopping flows a blind user would actually attempt, not artificial lab tasks. Before each task we asked participants to rate how difficult they expected it to be; after each one, they completed an ASQ (After-Scenario Questionnaire; standard ASQ scale: 1 = easiest, 7 = hardest) and walked through a semi-structured interview. Each session ran 45 to 60 minutes, with the consent form read aloud at the start so participants could confirm understanding before we began.
 
 I facilitated one of the three sessions myself, guiding the participant through tasks, managing the recording, and taking notes in real time, and observed a second to catch what the facilitator might miss.
 
