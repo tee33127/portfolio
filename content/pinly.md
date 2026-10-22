@@ -4,7 +4,7 @@ Pinly is a mobile app for the moment after you save a place and before you actua
 
 ## Empathize
 
-I started outside the app entirely, with a desk research pass across Reddit, Pantip, and Thai creator content on Lemon8, plus a look at how 8 existing apps (Google Maps Saved, Mapstr, Plotline, Rhyme, and others) handle saving today. I wanted real behavior patterns before writing a single survey question, and I kept that secondary evidence clearly separate from anything I hadn't verified myself. That pass pointed to three retrieval styles people actually use. Known-item ("I know the name, just find it"), associative ("the ramen place that creator posted"), and contextual ("something I saved nearby"). I turned this into a Proto-Empathy Map, and I labeled it "proto" on purpose. It's synthesis of other people's behavior, not primary research, and I didn't want it mistaken for user fact.
+I started outside the app entirely, with a desk research pass across Reddit, Pantip, and Thai creator content on Lemon8, plus a look at how 8 existing apps (Google Maps Saved, Mapstr, Plotline, Rhyme, and others) handle saving today. I wanted real behavior patterns before writing a single survey question, and I kept that secondary evidence clearly separate from anything I'd verified myself. That pass pointed to three retrieval styles people actually use. Known-item ("I know the name, just find it"), associative ("the ramen place that creator posted"), and contextual ("something I saved nearby"). I turned this into a Proto-Empathy Map, and I labeled it "proto" on purpose. It's synthesis of other people's behavior, not primary research, and I didn't want it mistaken for user fact.
 
 A few of the actual threads that shaped this, one in English and one in Thai:
 
