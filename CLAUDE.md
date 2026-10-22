@@ -22,7 +22,7 @@
 - Images: `public/images/<slug>/` (webp)
 - Visual work videos: `public/media/visual-work/`
 - Case study PDF reports: `public/docs/`
-- Resume: `public/` (PDF)
+- Resumes: the source files live in `../Resumes/00_MAIN` (English `..._MAIN.pdf`, Thai `..._MAIN_TH.pdf`). To update, copy them over `public/Teetawat_Trakulsuebchai_Resume.pdf` and `public/Teetawat_Trakulsuebchai_Resume_TH.pdf`. Each language links to its own PDF via `resumePdf` in `lib/i18n.ts`.
 - UI text for both languages (nav, homepage, About, Visual & Motion, case study labels, footer, form): `lib/i18n.ts`
 - Internal links: always `localePath(lang, "/path")` from `lib/i18n.ts`, never a hard-coded href. Case study links: `caseStudyLink()` in `lib/case-study-content.ts`.
 - English pages: `app/(en)/`. Thai pages: `app/th/` (own root layout, `<html lang="th">`, Thai font)

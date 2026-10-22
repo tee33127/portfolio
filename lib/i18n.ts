@@ -8,6 +8,9 @@ export type Lang = "en" | "th";
 
 const en = {
   lang: "en" as Lang,
+  // Resume PDF for this language. To update: copy the new PDF from
+  // ../Resumes/00_MAIN over this file in public/.
+  resumePdf: "/Teetawat_Trakulsuebchai_Resume.pdf",
   meta: {
     homeTitle: "Teetawat T.: UX Designer & Researcher",
     homeDescription:
@@ -152,6 +155,7 @@ export type Dictionary = typeof en;
 
 const th: Dictionary = {
   lang: "th",
+  resumePdf: "/Teetawat_Trakulsuebchai_Resume_TH.pdf",
   meta: {
     homeTitle: "ธีธวัช ตระกูลสืบชัย (Teetawat T.): UX Designer & Researcher",
     homeDescription:
@@ -244,7 +248,7 @@ const th: Dictionary = {
         items: "Claude · Claude Code สำหรับทำ prototype · n8n สำหรับ automation workflow",
       },
     ],
-    resume: "ดูเรซูเม่ (ภาษาอังกฤษ)",
+    resume: "เรซูเม่",
   },
   visual: {
     heading: "งานภาพและโมชัน",
@@ -307,5 +311,3 @@ export function alternatePath(pathname: string, target: Lang, thaiCaseStudies: s
   if (work && thaiCaseStudies.includes(work[1])) return localePath("th", enPath);
   return "/th";
 }
-
-export const RESUME_PATH = "/Teetawat_Trakulsuebchai_Resume.pdf";

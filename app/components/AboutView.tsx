@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { RESUME_PATH, type Dictionary } from "@/lib/i18n";
+import type { Dictionary } from "@/lib/i18n";
 
 // About page for both languages. All text comes from lib/i18n.ts.
 export default function AboutView({ t }: { t: Dictionary }) {
@@ -68,7 +68,7 @@ export default function AboutView({ t }: { t: Dictionary }) {
 
       <div className="not-prose mt-8">
         <a
-          href={RESUME_PATH}
+          href={t.resumePdf}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm font-medium border border-zinc-200 dark:border-zinc-700 rounded-lg px-5 py-2.5 hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"

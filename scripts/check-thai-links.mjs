@@ -6,7 +6,8 @@
 // - a case study card or "Next" link to /work/<slug> while content/th/<slug>.md
 //   doesn't exist yet (marked hreflang="en")
 // - files: PDFs, images, videos
-// It also fails if a /th link points to a Thai page that wasn't built.
+// It also fails if a /th link points to a Thai page that wasn't built, or if a
+// page links to the resume PDF of the other language (paths from lib/i18n.ts).
 
 import fs from "node:fs";
 import path from "node:path";
@@ -19,6 +20,11 @@ if (!fs.existsSync(path.join(appDir, "th.html"))) {
   console.error("No built Thai pages found. Run `npm run build` first.");
   process.exit(1);
 }
+
+// resumePdf in lib/i18n.ts: English first, then Thai.
+const [enResume, thResume] = [
+  ...fs.readFileSync(path.join(root, "lib/i18n.ts"), "utf-8").matchAll(/resumePdf: "([^"]+)"/g),
+].map((m) => m[1]);
 
 const thaiDir = path.join(root, "content/th");
 const thaiSlugs = fs.existsSync(thaiDir)
@@ -58,6 +64,10 @@ for (const file of files) {
     const target = href.split(/[#?]/)[0];
     const hreflang = attr(tag, "hreflang");
 
+    if (target === enResume) {
+      problems.push(`${page}: ${href} (English resume on a Thai page, use ${thResume})`);
+      continue;
+    }
     if (isFile(target)) continue;
 
     if (target === "/th" || target.startsWith("/th/")) {
@@ -79,9 +89,19 @@ for (const file of files) {
   }
 }
 
+// English pages must not link to the Thai resume.
+const englishFiles = listHtml(appDir).filter((f) => !toUrlPath(f).startsWith("/th"));
+for (const file of englishFiles) {
+  const html = fs.readFileSync(file, "utf-8");
+  if (html.includes(`href="${thResume}"`)) {
+    problems.push(`${toUrlPath(file)}: ${thResume} (Thai resume on an English page, use ${enResume})`);
+  }
+}
+
 if (problems.length) {
-  console.error(`✗ ${problems.length} link problem(s) on Thai pages:`);
+  console.error(`✗ ${problems.length} link problem(s):`);
   for (const p of problems) console.error(`  ${p}`);
   process.exit(1);
 }
 console.log(`✓ ${checked} internal links on ${files.length} Thai pages all stay in /th (or are allowed English fallbacks).`);
+console.log(`✓ Resume links match the page language on ${files.length} Thai and ${englishFiles.length} English pages.`);
