@@ -1,67 +1,12 @@
 import { notFound } from "next/navigation";
-import { marked, Renderer } from "marked";
-import fs from "fs";
-import path from "path";
-import sharp from "sharp";
 import { caseStudies } from "@/lib/case-studies";
-import { slugify } from "@/lib/slugify";
+import { caseStudyContent } from "@/lib/case-study-content";
+import { dictionaries } from "@/lib/i18n";
+import { caseStudyMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
-import CaseStudyView from "./CaseStudyView";
+import CaseStudyView from "@/app/components/CaseStudyView";
 
-export type Section = { id: string; label: string };
-
-function extractSections(markdown: string): Section[] {
-  return [...markdown.matchAll(/^##\s+(.+)$/gm)].map((m) => ({
-    id: slugify(m[1]),
-    label: m[1],
-  }));
-}
-
-async function renderMarkdown(markdown: string): Promise<string> {
-  const hrefs = [...markdown.matchAll(/!\[[^\]]*\]\(([^)\s]+)/g)].map((m) => m[1]);
-  const dimensions = new Map<string, { width: number; height: number }>();
-  await Promise.all(
-    hrefs.map(async (href) => {
-      const { width, height } = await sharp(
-        path.join(process.cwd(), "public", href)
-      ).metadata();
-      if (width && height) dimensions.set(href, { width, height });
-    })
-  );
-
-  const escapeAttr = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
-  const escapeHtml = (s: string) =>
-    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
-  // Markdown alt text becomes the image's alt. A visible caption only appears
-  // when the image has a markdown title: ![alt](src "caption"). Using alt as
-  // the caption too made screen readers announce the same text twice.
-  const renderer = new Renderer();
-  renderer.image = ({ href, title, text }) => {
-    const dim = dimensions.get(href);
-    const sizeAttrs = dim ? ` width="${dim.width}" height="${dim.height}"` : "";
-    const caption = title ? `<figcaption>${escapeHtml(title)}</figcaption>` : "";
-    return `<figure><img src="${href}" alt="${escapeAttr(text)}"${sizeAttrs} decoding="async" />${caption}</figure>`;
-  };
-  renderer.heading = ({ text, depth }) => {
-    if (depth === 2) {
-      return `<h2 id="${slugify(text)}">${text}</h2>`;
-    }
-    return `<h${depth}>${text}</h${depth}>`;
-  };
-  // A paragraph containing only an image renders as a block-level <figure>.
-  // Marked would otherwise wrap it in <p>, which the browser then splits into
-  // an empty <p> plus a sibling <figure> (invalid nesting) — harmless on its
-  // own, but that stray empty <p> becomes a real cell inside a CSS grid.
-  renderer.paragraph = (token) => {
-    if (token.tokens.length === 1 && token.tokens[0].type === "image") {
-      return renderer.image(token.tokens[0] as Parameters<typeof renderer.image>[0]);
-    }
-    return `<p>${renderer.parser.parseInline(token.tokens)}</p>`;
-  };
-
-  return marked(markdown, { renderer });
-}
+const t = dictionaries.en;
 
 export function generateStaticParams() {
   return caseStudies.map((study) => ({ slug: study.slug }));
@@ -75,26 +20,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const study = caseStudies.find((s) => s.slug === slug);
   if (!study) return {};
-  const title = `${study.title}: Tee`;
-  const url = `/work/${study.slug}`;
-  return {
-    title,
-    description: study.description,
-    alternates: {
-      canonical: url,
-    },
-    openGraph: {
-      title,
-      description: study.description,
-      url,
-      // Image comes from ./opengraph-image.tsx (1200x630 PNG).
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description: study.description,
-    },
-  };
+  return caseStudyMetadata(t, study);
 }
 
 export default async function CaseStudyPage({
@@ -106,10 +32,6 @@ export default async function CaseStudyPage({
   const study = caseStudies.find((s) => s.slug === slug);
   if (!study) notFound();
 
-  const filePath = path.join(process.cwd(), "content", `${slug}.md`);
-  const markdown = fs.readFileSync(filePath, "utf-8");
-  const html = await renderMarkdown(markdown);
-  const sections = extractSections(markdown);
-
-  return <CaseStudyView study={study} html={html} sections={sections} />;
+  const { html, sections } = await caseStudyContent(slug, "en");
+  return <CaseStudyView t={t} study={study} html={html} sections={sections} />;
 }

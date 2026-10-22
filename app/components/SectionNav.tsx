@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Section } from "./page";
+import type { Section } from "@/lib/case-study-content";
 import { scrollToAndFocus } from "@/lib/scroll";
 
-export default function SectionNav({ sections }: { sections: Section[] }) {
+export default function SectionNav({ sections, label }: { sections: Section[]; label: string }) {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export default function SectionNav({ sections }: { sections: Section[] }) {
   };
 
   return (
-    <nav aria-label="Case study sections" className="hidden lg:block">
+    <nav aria-label={label} className="hidden lg:block">
       <ol className="sticky top-8 space-y-3 border-l border-zinc-200 dark:border-zinc-800">
         {sections.map((section) => {
           const isActive = section.id === activeId;

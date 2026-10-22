@@ -1,5 +1,6 @@
 import Link from "next/link";
-import type { Dictionary } from "@/lib/i18n";
+import { localePath, type Dictionary } from "@/lib/i18n";
+import { thaiCaseStudySlugs } from "@/lib/case-study-content";
 import { ThemeProvider } from "./ThemeProvider";
 import NavLinks from "./NavLinks";
 import ThemeToggle from "./ThemeToggle";
@@ -17,6 +18,7 @@ export default function SiteShell({
   children: React.ReactNode;
 }) {
   const themeLabels = { toDark: t.common.themeToDark, toLight: t.common.themeToLight };
+  const thaiCaseStudies = thaiCaseStudySlugs();
 
   return (
     <>
@@ -31,13 +33,13 @@ export default function SiteShell({
           <header className="py-8 mb-12">
             <div className="flex sm:hidden items-center justify-between">
               <Link
-                href={t.paths.home}
+                href={localePath(t.lang, "/")}
                 className="text-sm font-medium text-black dark:text-white hover:opacity-60 transition-opacity"
               >
                 Teetawat T.
               </Link>
               <div className="flex items-center gap-4">
-                <LanguageToggle current={t.lang} label={t.common.languageGroup} />
+                <LanguageToggle current={t.lang} label={t.common.languageGroup} thaiCaseStudies={thaiCaseStudies} />
                 <ThemeToggle labels={themeLabels} />
               </div>
             </div>
@@ -47,7 +49,7 @@ export default function SiteShell({
 
             <div className="hidden sm:flex items-center justify-between">
               <Link
-                href={t.paths.home}
+                href={localePath(t.lang, "/")}
                 className="text-sm font-medium text-black dark:text-white hover:opacity-60 transition-opacity"
               >
                 Teetawat T.
@@ -56,7 +58,7 @@ export default function SiteShell({
                 <nav className="flex items-center gap-6">
                   <NavLinks t={t} />
                 </nav>
-                <LanguageToggle current={t.lang} label={t.common.languageGroup} />
+                <LanguageToggle current={t.lang} label={t.common.languageGroup} thaiCaseStudies={thaiCaseStudies} />
                 <ThemeToggle labels={themeLabels} />
               </div>
             </div>

@@ -16,17 +16,20 @@
 - Contact form posts to Formspree (form ID `xeevbzqr`).
 
 ## Where things are
-- Case study text: `content/<slug>.md`
-- Case study card metadata: `lib/case-studies.ts`
-- Visual & Motion work: `lib/visual-work.ts`
+- Case study text: `content/<slug>.md`, Thai in `content/th/<slug>.md` (a Thai case study page exists only when that file exists)
+- Case study card metadata: `lib/case-studies.ts` (Thai text in each project's `th` block)
+- Visual & Motion work: `lib/visual-work.ts` (Thai titles and roles in `th`)
 - Images: `public/images/<slug>/` (webp)
 - Visual work videos: `public/media/visual-work/`
 - Case study PDF reports: `public/docs/`
 - Resume: `public/` (PDF)
-- UI text for both languages (nav, homepage, About, footer, form): `lib/i18n.ts`
+- UI text for both languages (nav, homepage, About, Visual & Motion, case study labels, footer, form): `lib/i18n.ts`
+- Internal links: always `localePath(lang, "/path")` from `lib/i18n.ts`, never a hard-coded href. Case study links: `caseStudyLink()` in `lib/case-study-content.ts`.
 - English pages: `app/(en)/`. Thai pages: `app/th/` (own root layout, `<html lang="th">`, Thai font)
 - Shared header, footer and contact form: `app/components/SiteShell.tsx` and `app/components/`
-- Case study template: `app/(en)/work/[slug]/` (`page.tsx`, `CaseStudyView.tsx`, `SectionNav.tsx`)
+- Case study template: `app/components/CaseStudyView.tsx` and `SectionNav.tsx`; markdown rendering in `lib/case-study-content.ts`. Routes: `app/(en)/work/[slug]/` and `app/th/work/[slug]/`
+- Share images: `app/components/CaseStudyOgImage.tsx`. The Thai one is drawn with sharp and IBM Plex Sans Thai from `assets/fonts/`, because next/og can't stack Thai tone marks.
+- Link check: `node scripts/check-thai-links.mjs` after `npm run build` (fails if a Thai page links out of /th)
 
 ## Rules
 - I'm not a developer. Keep solutions simple and avoid adding dependencies unless they're needed.
@@ -36,8 +39,9 @@
 - Accessibility is my specialty. Every change must meet WCAG 2.2 AA: contrast, alt text, keyboard access, visible focus.
 
 ## Languages
-- The site is becoming bilingual: English, plus Thai at `/th` for the homepage and About only (added later).
-- Case studies stay English only.
+- The site is bilingual: English, plus Thai at `/th` (homepage, About, Visual & Motion).
+- Case studies are being translated one at a time (Round 2, Task 7). Until a project has `content/th/<slug>.md`, its Thai card links to the English page.
+- The EN/TH toggle always goes to the same page in the other language, or to /th if there is no Thai version yet.
 - Once Thai exists, every UI text change must update both languages.
 - Thai copy: semi-formal and natural, first person with "ผม" (never "กระผม").
   Keep common English UX terms (UX, usability testing, prototype, Figma) in English.
@@ -48,5 +52,5 @@
 - No em dashes or en dashes in my copy. Write date ranges as "Sep 2020 to Mar 2022".
 
 ## Roadmap
-- The improvement plan is in `../CLAUDE_CODE_INSTRUCTIONS.md` (Task 0 to Task 5).
+- The improvement plan is in `../CLAUDE_CODE_INSTRUCTIONS.md` (Task 0 to Task 5, then Round 2: Task 6 to Task 8).
 - Do one task at a time and wait for me to say "next".

@@ -1,5 +1,6 @@
-// All UI text for the homepage, About page, header and footer, in English and
-// Thai. Case studies and the Visual & Motion page stay English only.
+// All UI text for both languages: header, footer, homepage, About,
+// Visual & Motion and the case study page template. Per-project text lives in
+// lib/case-studies.ts and lib/visual-work.ts (each item has a `th` block).
 //
 // When you change UI text, update BOTH languages.
 
@@ -7,7 +8,6 @@ export type Lang = "en" | "th";
 
 const en = {
   lang: "en" as Lang,
-  paths: { home: "/", about: "/about" },
   meta: {
     homeTitle: "Teetawat T.: UX Designer & Researcher",
     homeDescription:
@@ -15,6 +15,10 @@ const en = {
     shareDescription: "UX Designer and Researcher based in Bangkok, Thailand.",
     aboutTitle: "About: Tee",
     aboutDescription: "UX Designer and Researcher based in Bangkok, Thailand.",
+    visualTitle: "Visual & Motion Work: Tee",
+    visualDescription:
+      "Video editing and motion graphics work from Tee's time as a Video Editor at Garena Online.",
+    titleSuffix: "Tee",
     ogLocale: "en_US",
   },
   common: {
@@ -54,8 +58,6 @@ const en = {
     moreAbout: "More about me",
     caseStudiesHeading: "UX Case Studies",
     caseStudiesNote: null as string | null,
-    // Card subtitle and outcome come from lib/case-studies.ts in English.
-    cards: {} as Partial<Record<string, { subtitle: string; outcome: string }>>,
     visualHeading: "Visual & Motion Work",
     visualLink: "View visual & motion work",
   },
@@ -108,6 +110,37 @@ const en = {
     ],
     resume: "View resume",
   },
+  visual: {
+    heading: "Visual & Motion Work",
+    intro:
+      "Before UX, I worked as a Video Editor at Garena Online, producing video edits and motion graphics for in-house digital channels. A selection of that work is below.",
+    descriptionByType: {
+      video:
+        "I edited the supplied footage and graphic assets. I created the sequence, character and text animation, transitions, music, and sound design.",
+      image:
+        "I created the composition using supplied character artwork. I designed the frames, typography, layout, and visual effects.",
+    },
+    credit:
+      "Garena supplied the original game footage and character artwork. My contribution focused on editing, animation, composition, typography, and visual presentation.",
+    play: "Play",
+  },
+  caseStudy: {
+    type: "Type",
+    year: "Year",
+    role: "Role",
+    team: "Team",
+    keyOutcome: "Key outcome",
+    atAGlance: "At a glance",
+    problem: "Problem",
+    whatIDid: "What I did",
+    result: "Result",
+    report: "View full research report",
+    next: "Next",
+    back: "Work",
+    sectionsLabel: "Case study sections",
+    ogLabel: "UX CASE STUDY",
+    ogByline: "Teetawat T. · UX Designer & Researcher",
+  },
   notFound: {
     heading: "Page not found",
     body: "This page doesn't exist or may have moved.",
@@ -119,7 +152,6 @@ export type Dictionary = typeof en;
 
 const th: Dictionary = {
   lang: "th",
-  paths: { home: "/th", about: "/th/about" },
   meta: {
     homeTitle: "ธีธวัช ตระกูลสืบชัย (Teetawat T.): UX Designer & Researcher",
     homeDescription:
@@ -127,6 +159,9 @@ const th: Dictionary = {
     shareDescription: "UX designer และ researcher ในกรุงเทพฯ",
     aboutTitle: "เกี่ยวกับผม: ธีธวัช",
     aboutDescription: "UX designer และ researcher ในกรุงเทพฯ",
+    visualTitle: "งานภาพและโมชัน: ธีธวัช",
+    visualDescription: "ผลงานตัดต่อวิดีโอและ motion graphics ช่วงที่ผมเป็น Video Editor ที่ Garena Online",
+    titleSuffix: "ธีธวัช",
     ogLocale: "th_TH",
   },
   common: {
@@ -138,8 +173,8 @@ const th: Dictionary = {
   },
   nav: {
     work: "ผลงาน UX",
-    visual: "Visual & Motion",
-    visualShort: "Visual",
+    visual: "งานภาพและโมชัน",
+    visualShort: "งานภาพ",
     about: "เกี่ยวกับผม",
     resume: "เรซูเม่",
   },
@@ -166,31 +201,8 @@ const th: Dictionary = {
     moreAbout: "รู้จักผมเพิ่มเติม",
     caseStudiesHeading: "กรณีศึกษา UX",
     caseStudiesNote: "กรณีศึกษาเขียนเป็นภาษาอังกฤษ",
-    cards: {
-      kidsconnect: {
-        subtitle: "แอปจัดการงานบ้านสำหรับครอบครัว",
-        outcome: "เพิ่มคะแนน usability ของงานหลักได้สูงสุด 2.2 คะแนน",
-      },
-      pinly: {
-        subtitle: "ผู้ช่วยตัดสินใจเลือกสถานที่",
-        outcome:
-          "นำผลแบบสอบถามจากผู้ตอบ 25 คน และการวิเคราะห์คู่แข่ง 8 แอป มาสร้างเป็น prototype 32 หน้าจอ 98 ลิงก์",
-      },
-      etsy: {
-        subtitle: "ออกแบบ information architecture ใหม่",
-        outcome: "เพิ่มอัตราการทำ task สำเร็จจาก 67% เป็น 94%",
-      },
-      "amazon-accessibility": {
-        subtitle: "Usability research สำหรับผู้ใช้ screen reader",
-        outcome: "พบอุปสรรคด้าน accessibility ที่เกิดซ้ำ 5 ข้อ",
-      },
-      "lost-item": {
-        subtitle: "User research สำหรับบริการช่วยหาของหาย",
-        outcome: "มองปัญหาของหายใหม่ ว่าไม่ใช่แค่เรื่องตำแหน่ง แต่เป็นเรื่องความรู้สึกด้วย",
-      },
-    },
-    visualHeading: "ผลงาน Visual & Motion",
-    visualLink: "ดูผลงาน Visual & Motion ทั้งหมด",
+    visualHeading: "งานภาพและโมชัน",
+    visualLink: "ดูงานภาพและโมชันทั้งหมด",
   },
   about: {
     heading: "เกี่ยวกับผม",
@@ -234,6 +246,37 @@ const th: Dictionary = {
     ],
     resume: "ดูเรซูเม่ (ภาษาอังกฤษ)",
   },
+  visual: {
+    heading: "งานภาพและโมชัน",
+    intro:
+      "ก่อนมาทำ UX ผมเป็น Video Editor ที่ Garena Online ทำงานตัดต่อวิดีโอและ motion graphics ให้ช่องทางดิจิทัลของบริษัท ด้านล่างนี้คือผลงานบางส่วนที่ผมคัดมา",
+    descriptionByType: {
+      video:
+        "ผมตัดต่อจากฟุตเทจและกราฟิกที่ได้รับมา โดยทำเองทั้งการเรียงลำดับเรื่อง แอนิเมชันตัวละครและตัวอักษร ทรานซิชัน เพลง และ sound design",
+      image:
+        "ผมจัดองค์ประกอบภาพจากอาร์ตเวิร์กตัวละครที่ได้รับมา และออกแบบเฟรม typography เลย์เอาต์ และ visual effects เอง",
+    },
+    credit:
+      "ฟุตเทจเกมและอาร์ตเวิร์กตัวละครต้นฉบับเป็นของ Garena ส่วนที่ผมทำคือการตัดต่อ แอนิเมชัน การจัดองค์ประกอบภาพ typography และการนำเสนอด้านภาพ",
+    play: "เล่นวิดีโอ",
+  },
+  caseStudy: {
+    type: "ประเภท",
+    year: "ปี",
+    role: "บทบาท",
+    team: "ทีม",
+    keyOutcome: "ผลลัพธ์หลัก",
+    atAGlance: "สรุปโดยย่อ",
+    problem: "ปัญหา",
+    whatIDid: "สิ่งที่ผมทำ",
+    result: "ผลที่ได้",
+    report: "ดูรายงานฉบับเต็ม (ภาษาอังกฤษ)",
+    next: "ถัดไป",
+    back: "ผลงาน UX",
+    sectionsLabel: "หัวข้อในกรณีศึกษา",
+    ogLabel: "กรณีศึกษา UX",
+    ogByline: "ธีธวัช ตระกูลสืบชัย · UX Designer & Researcher",
+  },
   notFound: {
     heading: "ไม่พบหน้านี้",
     body: "หน้านี้ไม่มีอยู่ หรืออาจถูกย้ายไปแล้ว",
@@ -243,16 +286,26 @@ const th: Dictionary = {
 
 export const dictionaries: Record<Lang, Dictionary> = { en, th };
 
-// Same page in the other language. Pages without a Thai version
-// (case studies, Visual & Motion) switch to the Thai homepage.
-export function alternatePath(pathname: string, target: Lang): string {
-  if (target === "th") {
-    if (pathname === "/about") return "/th/about";
-    return "/th";
-  }
-  if (pathname === "/th/about") return "/about";
-  if (pathname.startsWith("/th")) return "/";
-  return pathname;
+// The one place that decides where an internal link goes in each language.
+// Use it for every internal href, so Thai pages never link out of /th by
+// accident: localePath("th", "/about") is "/th/about", "/" is "/th".
+export function localePath(lang: Lang, path: string): string {
+  if (lang === "en") return path;
+  if (path === "/") return "/th";
+  if (path.startsWith("/#")) return `/th${path.slice(1)}`;
+  return `/th${path}`;
+}
+
+// Same page in the other language. thaiCaseStudies lists the slugs that have
+// a Thai version (content/th/<slug>.md). A page with no Thai version yet
+// falls back to the Thai homepage.
+export function alternatePath(pathname: string, target: Lang, thaiCaseStudies: string[]): string {
+  const enPath = pathname === "/th" ? "/" : pathname.startsWith("/th/") ? pathname.slice(3) : pathname;
+  if (target === "en") return enPath;
+  if (["/", "/about", "/visual-work"].includes(enPath)) return localePath("th", enPath);
+  const work = enPath.match(/^\/work\/([^/]+)$/);
+  if (work && thaiCaseStudies.includes(work[1])) return localePath("th", enPath);
+  return "/th";
 }
 
 export const RESUME_PATH = "/Teetawat_Trakulsuebchai_Resume.pdf";

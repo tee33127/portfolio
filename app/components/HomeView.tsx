@@ -1,14 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import { caseStudies } from "@/lib/case-studies";
-import { visualWork } from "@/lib/visual-work";
-import type { Dictionary } from "@/lib/i18n";
+import { caseStudies, localizedStudy } from "@/lib/case-studies";
+import { caseStudyLink } from "@/lib/case-study-content";
+import { visualWork, localizedWork } from "@/lib/visual-work";
+import { localePath, type Dictionary } from "@/lib/i18n";
 import ScrollToContact from "./ScrollToContact";
 
 const featuredVisualWorkSlugs = ["moonlight-blade-perspective", "rov-skin-promo"];
 
-// Homepage for both languages. Case study cards always link to the English
-// case studies; on the Thai page, their subtitle and outcome are translated.
+// Homepage for both languages. On the Thai page, a case study card links to
+// the Thai case study once it exists, and to the English one until then.
 export default function HomeView({ t }: { t: Dictionary }) {
   return (
     <>
@@ -32,7 +33,7 @@ export default function HomeView({ t }: { t: Dictionary }) {
           <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <ScrollToContact label={t.home.contact} />
             <Link
-              href={t.paths.about}
+              href={localePath(t.lang, "/about")}
               className="text-sm font-medium border border-zinc-200 dark:border-zinc-700 text-black dark:text-white px-5 py-2.5 rounded-lg hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors"
             >
               {t.home.moreAbout}
@@ -54,12 +55,13 @@ export default function HomeView({ t }: { t: Dictionary }) {
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {caseStudies.map((study) => {
-            const card = t.home.cards[study.slug] ?? study;
+            const card = localizedStudy(study, t.lang);
+            const link = caseStudyLink(t.lang, study.slug);
             return (
               <Link
                 key={study.slug}
-                href={`/work/${study.slug}`}
-                hrefLang={t.lang === "en" ? undefined : "en"}
+                href={link.href}
+                hrefLang={link.fallbackToEnglish ? "en" : undefined}
                 className="group block"
               >
                 <div className="overflow-hidden rounded-xl mb-5">
@@ -95,10 +97,11 @@ export default function HomeView({ t }: { t: Dictionary }) {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
           {featuredVisualWorkSlugs.map((slug) => {
-            const work = visualWork.find((item) => item.slug === slug);
-            if (!work) return null;
+            const item = visualWork.find((w) => w.slug === slug);
+            if (!item) return null;
+            const work = localizedWork(item, t.lang);
             return (
-              <Link key={slug} href={`/visual-work#${slug}`} className="group block">
+              <Link key={slug} href={localePath(t.lang, `/visual-work#${slug}`)} className="group block">
                 <div
                   className="relative w-full overflow-hidden rounded-xl mb-3"
                   style={{ aspectRatio: `${work.width} / ${work.height}` }}
@@ -112,7 +115,7 @@ export default function HomeView({ t }: { t: Dictionary }) {
                     className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.02]"
                   />
                 </div>
-                <p lang="en" className="text-base font-medium text-black dark:text-white leading-snug">
+                <p className="text-base font-medium text-black dark:text-white leading-snug">
                   {work.title}
                 </p>
               </Link>
@@ -120,7 +123,7 @@ export default function HomeView({ t }: { t: Dictionary }) {
           })}
         </div>
         <Link
-          href="/visual-work"
+          href={localePath(t.lang, "/visual-work")}
           className="text-sm font-medium text-black dark:text-white hover:opacity-60 transition-opacity"
         >
           {t.home.visualLink} <span aria-hidden="true">→</span>

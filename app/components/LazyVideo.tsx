@@ -6,6 +6,7 @@ type LazyVideoProps = {
   src: string;
   poster: string;
   title: string;
+  playLabel: string;
   width: number;
   height: number;
   priority?: boolean;
@@ -31,6 +32,7 @@ export default function LazyVideo({
   src,
   poster,
   title,
+  playLabel,
   width,
   height,
   priority,
@@ -54,7 +56,7 @@ export default function LazyVideo({
     <button
       type="button"
       onClick={() => setPlaying(true)}
-      aria-label={`Play ${title}`}
+      aria-label={`${playLabel} ${title}`}
       className="group relative block w-full outline-none"
       style={{ aspectRatio: `${width} / ${height}` }}
     >

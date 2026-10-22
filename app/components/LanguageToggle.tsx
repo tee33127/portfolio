@@ -8,9 +8,25 @@ const languages: { lang: Lang; short: string; name: string }[] = [
 ];
 
 // EN / TH switch. Each option is a real link to the same page in that
-// language, named in its own language for screen readers.
-export default function LanguageToggle({ current, label }: { current: Lang; label: string }) {
+// language, named in its own language for screen readers. If that page has no
+// Thai version yet, TH goes to the Thai homepage. A #section anchor carries over.
+export default function LanguageToggle({
+  current,
+  label,
+  thaiCaseStudies,
+}: {
+  current: Lang;
+  label: string;
+  thaiCaseStudies: string[];
+}) {
   const pathname = usePathname();
+
+  // The anchor isn't part of the pathname, so add it at click time.
+  const keepAnchor = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = new URL(e.currentTarget.href);
+    const samePage = alternatePath(target.pathname, current, thaiCaseStudies) === pathname;
+    if (samePage && window.location.hash) e.currentTarget.hash = window.location.hash;
+  };
 
   return (
     <div role="group" aria-label={label} className="flex items-center gap-1.5 text-sm whitespace-nowrap">
@@ -24,7 +40,8 @@ export default function LanguageToggle({ current, label }: { current: Lang; labe
               </span>
             )}
             <a
-              href={isCurrent ? pathname : alternatePath(pathname, lang)}
+              href={isCurrent ? pathname : alternatePath(pathname, lang, thaiCaseStudies)}
+              onClick={isCurrent ? undefined : keepAnchor}
               hrefLang={lang}
               lang={lang}
               aria-label={name}
