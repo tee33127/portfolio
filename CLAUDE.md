@@ -43,7 +43,9 @@
 - Case studies are being translated one at a time (Round 2, Task 7). Until a project has `content/th/<slug>.md`, its Thai card links to the English page.
 - The EN/TH toggle always goes to the same page in the other language, or to /th if there is no Thai version yet.
 - Once Thai exists, every UI text change must update both languages.
-- Thai copy: semi-formal and natural, first person with "ผม" (never "กระผม").
+- Thai case study headings: design-thinking stage names (Empathize, Define, Ideate, Prototype, Test, Reflect) stay English; all other headings are Thai with the English id kept, e.g. `## ปัญหา {#the-problem}`.
+- Check numbers after editing a Thai case study: `node scripts/check-thai-numbers.mjs`.
+- Thai copy: semi-formal and natural, first person with "ผม" (never "กระผม"). Write the repeat sign with a space: "พอ ๆ".
   Keep common English UX terms (UX, usability testing, prototype, Figma) in English.
 
 ## Writing tone

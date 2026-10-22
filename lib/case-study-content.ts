@@ -33,11 +33,16 @@ export function caseStudyLink(lang: Lang, slug: string) {
   };
 }
 
+// A section heading can set its own id: "## ปัญหา {#the-problem}". Thai
+// case studies use this so section ids match the English page. Without one,
+// the id comes from the heading text ("## The Problem" -> "the-problem").
+function parseHeading(text: string): Section {
+  const custom = text.match(/^(.*?)\s*\{#([a-z0-9-]+)\}\s*$/);
+  return custom ? { label: custom[1], id: custom[2] } : { label: text, id: slugify(text) };
+}
+
 function extractSections(markdown: string): Section[] {
-  return [...markdown.matchAll(/^##\s+(.+)$/gm)].map((m) => ({
-    id: slugify(m[1]),
-    label: m[1],
-  }));
+  return [...markdown.matchAll(/^##\s+(.+)$/gm)].map((m) => parseHeading(m[1]));
 }
 
 async function renderMarkdown(markdown: string): Promise<string> {
@@ -68,7 +73,8 @@ async function renderMarkdown(markdown: string): Promise<string> {
   };
   renderer.heading = ({ text, depth }) => {
     if (depth === 2) {
-      return `<h2 id="${slugify(text)}">${text}</h2>`;
+      const { id, label } = parseHeading(text);
+      return `<h2 id="${id}">${label}</h2>`;
     }
     return `<h${depth}>${text}</h${depth}>`;
   };

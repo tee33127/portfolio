@@ -7,6 +7,9 @@
 //
 // Image and link URLs are ignored (file names like heatmap-round1.webp).
 // Alt text and captions are checked, since they are translated too.
+// An English number word may become a digit in Thai ("Four participants"
+// -> "ผู้เข้าร่วม 4 คน"), so English words one to twenty can cover an extra
+// Thai digit. Any other difference fails.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -36,12 +39,29 @@ function numbers(markdown) {
   return counts;
 }
 
+const words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+  "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"];
+
+function numberWords(markdown) {
+  const counts = new Map();
+  for (const [w] of markdown.toLowerCase().matchAll(/\b[a-z]+\b/g)) {
+    const n = words.indexOf(w);
+    if (n >= 0) counts.set(String(n), (counts.get(String(n)) ?? 0) + 1);
+  }
+  return counts;
+}
+
 let failed = false;
 for (const slug of slugs) {
-  const en = numbers(fs.readFileSync(path.join(root, "content", `${slug}.md`), "utf-8"));
+  const enText = fs.readFileSync(path.join(root, "content", `${slug}.md`), "utf-8");
+  const en = numbers(enText);
+  const enWords = numberWords(enText);
   const th = numbers(fs.readFileSync(draftPath ?? path.join(thaiDir, `${slug}.md`), "utf-8"));
   const mismatches = [...new Set([...en.keys(), ...th.keys()])]
-    .filter((n) => en.get(n) !== th.get(n))
+    .filter((n) => {
+      const extra = (th.get(n) ?? 0) - (en.get(n) ?? 0);
+      return extra < 0 || extra > (enWords.get(n) ?? 0);
+    })
     .map((n) => `  ${n}: English ${en.get(n) ?? 0}×, Thai ${th.get(n) ?? 0}×`);
 
   if (mismatches.length) {
