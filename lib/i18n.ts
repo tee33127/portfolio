@@ -200,7 +200,7 @@ const th: Dictionary = {
     contact: "ติดต่อผม",
     moreAbout: "รู้จักผมเพิ่มเติม",
     caseStudiesHeading: "กรณีศึกษา UX",
-    caseStudiesNote: "กรณีศึกษาเขียนเป็นภาษาอังกฤษ",
+    caseStudiesNote: null,
     visualHeading: "งานภาพและโมชัน",
     visualLink: "ดูงานภาพและโมชันทั้งหมด",
   },

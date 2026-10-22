@@ -39,9 +39,9 @@
 - Accessibility is my specialty. Every change must meet WCAG 2.2 AA: contrast, alt text, keyboard access, visible focus.
 
 ## Languages
-- The site is bilingual: English, plus Thai at `/th` (homepage, About, Visual & Motion).
-- Case studies are being translated one at a time (Round 2, Task 7). Until a project has `content/th/<slug>.md`, its Thai card links to the English page.
-- The EN/TH toggle always goes to the same page in the other language, or to /th if there is no Thai version yet.
+- The whole site is bilingual: English, plus Thai at `/th` for every page (homepage, About, Visual & Motion, all case studies).
+- Thai case studies live in `content/th/<slug>.md`. Any change to an English case study must be made in the Thai file too (then run the number check).
+- A new case study without a Thai file yet: its Thai card falls back to the English page, and the EN/TH toggle goes to /th.
 - Once Thai exists, every UI text change must update both languages.
 - Thai case study headings: design-thinking stage names (Empathize, Define, Ideate, Prototype, Test, Reflect) stay English; all other headings are Thai with the English id kept, e.g. `## ปัญหา {#the-problem}`.
 - Check numbers after editing a Thai case study: `node scripts/check-thai-numbers.mjs`.
